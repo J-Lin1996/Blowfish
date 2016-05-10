@@ -1,0 +1,214 @@
+.main{
+    background-color:#9dd9ed;
+    /*
+       change background color to mimic ocean
+    */
+    background-image:-webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #cfecf6),
+        color-stop(0.61, #01b9f5)
+    );
+   
+    background-attachment:fixed;
+    height:480px;
+    width:320px;
+    position: relative;
+    left:50%;
+    margin-left:-160px;
+}
+
+.life{
+    width:100px;
+    height:10px;
+    position: absolute;
+	
+    z-index:2;
+    left:10px;
+    top:10px;
+    border:1px solid #ff9900;
+    border-radius: 7px;
+    padding:1px;
+	background:white;
+
+}
+
+.life label{
+	/*
+	   inner block
+	   this is for life(HP)
+	   every time the blow fish eats food, the life (HP) will increase
+	*/
+    display: inline-block;
+    width: 0px;
+    height:10px;
+    background-color: #ff9900;
+    border-radius: 7px;
+    float:left;
+}
+
+.food1 {
+    width:50px;
+    height:50px;
+    position: absolute;
+    left:130px;
+    top:50px;
+    border:4px solid #ffffff;
+}
+
+.food1 img {
+    width:50px;
+    height:50px;
+}
+
+.blowfish {
+    width:30px;
+    height:30px;
+    position: absolute;
+    /*left:30px;*/
+    top:350px;
+}
+
+.blowfish img {
+    width:30px;
+    height:30px;
+    border:4px solid #ffffff;
+}
+
+.level{
+    position: absolute;
+    z-index:2;
+    color:white;
+    font-size:15px;
+    right:10px;
+    top:10px;
+	font-weight:bolder;
+}
+
+.level span{
+    color: #fb0;
+    font-weight: bolder;
+}
+
+.start_flush{
+    position: absolute;
+    left:0;
+    top:0;
+    width:320px;
+    height:480px;
+    /*
+       change here background later..........
+    */
+    background:url(../img/fish.png) no-repeat; 
+    z-index: 10; 
+	background-size: 320px 480px;
+}
+
+.start_btn{
+    display: inline-block;
+    position: absolute;
+    width:60px;
+    height:60px;
+    border:4px solid #ffffff;
+    border-radius: 32px;
+    left:239px;
+    top:394px;
+}
+
+.start_btn:before{
+    content:"";
+    display: inline-block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    border-top: 20px solid transparent;
+    border-left: 40px solid #feff01;
+    border-bottom: 20px solid transparent;
+    top:9px;
+    left:15px;
+}
+
+.start_btn:active:before{
+    border-left-color: #fb0;
+}
+
+.end_flush{
+    position: absolute;
+    left:30px;
+    top:130px;
+    width:260px;
+    height:123px;
+    display: block; /*none*/
+	background-color: white;
+	border: 1px solid #589300;
+	border-radius: 20px;
+}
+
+.end_flush .icon{
+	display:inline-block;
+	float:left;
+	width:55px;
+	height:53px;
+	background:url(../img/baozi.png) no-repeat;
+	background-size:55px 106px;
+	margin: 12px 0 0 12px;
+}
+
+.end_flush .icon.happy{
+	background:url(../img/baozi.png) 0 -54px no-repeat;
+	background-size:55px 107px;
+}
+
+.end_flush p{
+    display: inline-block;
+    float:right;
+    width:170px;
+    color:#31454c;
+	margin-right:10px;
+    font-size: 16px;
+    font-weight: bolder;
+	line-height:26px;
+}
+.end_flush p label{
+	color:#ff9900;
+}
+
+.end_flush .replay_btn{
+    display: inline-block;
+    position: absolute;
+    color:#fb0;
+    
+	text-shadow:1px 1px 1px #333333;
+    bottom:20px;
+    right:20px;
+	font-size:16px;
+	font-weight:bolder;
+	
+	text-decoration:none;
+	line-height:23px;
+}
+
+.end_flush .replay_btn:after{
+	content:"";
+	display:inline-block;
+	
+	background:url(../img/icons_btn.png) no-repeat right 0;
+	
+    background-size: 19px 108px;
+	width:19px;
+	height:23px;
+	float:right;
+	
+    padding-right: 5px;
+}
+
+
+
+
+
+
+
+
+
