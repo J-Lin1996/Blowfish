@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>blowfish</title>
+
+  <link rel="stylesheet" type="text/css" href="css/index.css" />
+  <script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+  <script type="text/javascript" src="js/wfn.js"></script>
+  <script type="text/javascript" src="js/fish.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+
+
+</head>
+<body>
+	<div class="main" id="js_main" tabindex="-1">
+        <!--<canvas id="canvas" width="320" height="480"></canvas>-->
+		
+		<div class="life">
+			<label id="js_life"></label>
+		</div>
+
+		<!-- this is for the score -->
+		<div class="level">
+			score: <span id="js_level">0</span>
+		</div>
+
+        <!--food position 1-->
+        <div id="food-1" class="food1">
+            <img src="img/animals-blowfish.png" alt="food1" />
+        </div>
+        
+        <!--food position 2-->
+        <div id="food-2" class="food2">
+
+        </div>
+       
+        <!--food position 3-->
+        <div id="food-3" class="food3">
+
+        </div>
+        
+        <!--food position 4-->
+        <div id="food-4" class="food4">
+
+        </div>
+
+
+        <div class="blowfish" id="fatfish" style="left:30px; display:block">
+            <img src="img/animals-blowfish.png" alt="blowfish" id="imgfish" />
+        </div>
+
+		<div class="start_flush" id="js_start_flush">
+			<a href="javascript:void(0)" id="js_start_btn" style="display: none;"
+				class="start_btn" onclick="start()"> 
+			</a> 
+			<span
+				id="js_start_loading"
+				style="position: absolute; left: 241px; top: 417px; font-size: 16px; font-weight: bolder;">Loading...
+			</span>
+		</div>
+
+		<div class="end_flush" id="js_end_flush">
+			<span class="icon"></span>
+			<p></p>
+			<a href="javascript:void(0)" class="replay_btn"
+				onclick="Main.replay()"></a>
+		</div>
+	</div>
+
+</body>
+</html>
