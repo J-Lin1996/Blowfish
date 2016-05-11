@@ -41,12 +41,12 @@ function init() {
     //gameInfo.h = canvas.offsetHeight; //offset height
 	document.getElementById("js_start_loading").style.display = "none";
 	document.getElementById("js_start_btn").style.display = "block";
-	randomFoodPlacement(imgs);
+	
 }
 
 function start() {
     document.getElementById("js_start_flush").style.display = "none";
-
+    randomFoodPlacement(imgs);
     //initiate the blowfish
     fish = new Fish(150, 0, gameInfo);
 }

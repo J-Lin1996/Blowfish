@@ -3,17 +3,17 @@
     /*
        change background color to mimic ocean
     */
-    background-image:-webkit-gradient(
+    /*background-image:-webkit-gradient(
         linear,
         left top,
         left bottom,
         color-stop(0, #cfecf6),
         color-stop(0.61, #01b9f5)
-    );
+    );*/
     
-    /*background: url(../img/background.jpg) no-repeat;*/
+    background: url(../img/background.png) no-repeat;
    
-    background-attachment:fixed;
+    /*background-attachment:fixed;*/
     height:480px;
     width:320px;
     position: relative;
