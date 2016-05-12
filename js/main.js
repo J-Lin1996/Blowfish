@@ -46,7 +46,7 @@ function init() {
 	document.getElementById("js_start_loading").style.display = "none";
 	document.getElementById("js_start_btn").style.display = "block";
 	document.getElementById("js_tutor_btn").style.display = "block";
-	
+
 }
 
 function start() {
@@ -93,7 +93,7 @@ function finishClick() {
             //alert("stupid man");
             win = false;
             over(win);
-        }  
+        }
     }
 }
 
@@ -130,8 +130,8 @@ function clearEatingOrderUser() {
 }
 
 function over(flag){
-		
-  
+
+
     //this.timeQuene.stop();
 
 
@@ -164,7 +164,7 @@ $(document).keydown(function(event) {
             //document.getElementById('imgfish').src = './img/crab.png';   //for testing
             clearInterval(movingTimer);
             movingTimer = null;
-            movingTimer = setInterval(' moveLeft();', 10);         
+            movingTimer = setInterval(' moveLeft();', 10);
             break;
         case 38: // up
             //change picture here
