@@ -217,6 +217,26 @@
     border-left-color: #fb0;
 }
 
+.tutor_btn{
+    display: inline-block;
+    position: absolute;
+    width:60px;
+    height:60px;
+    border:4px solid #ffffff;
+    border-radius: 32px;
+    left:15px;
+    top:394px;
+}
+
+.tutor_btn img{   
+    width:50px;
+    height:50px;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+
+
 .end_flush{
     position: absolute;
     left:30px;

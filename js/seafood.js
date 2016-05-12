@@ -4,6 +4,9 @@ var eatingOrderElem = new Array(4); //stored the order of eating elements
 function randomFoodPlacement(foodImgs) {
     var foodNum = generateFoodNumArr(); //get the foodNum array
     //var foodPosition = $("#food-" + foodNum[0]);  //get the img element on which the food will be placed
+
+    document.getElementById("js_end_flush").style.display = "none";
+
     generateOrderFood(foodImgs);
     document.getElementById('fatfish').style.display = "block";
     clearCounter();

@@ -14,11 +14,15 @@ function foodDisplay(foodOrderImgArr) {
     document.getElementById('foodDisplay2').src = foodOrderImgArr[2].src;
     document.getElementById('foodDisplay3').src = foodOrderImgArr[3].src;
     document.getElementById('foodDisplay').style.display = "block";
+    stopTimer();
+    document.getElementById("js_life").style.width = 100 + "px";
     setTimeout(foodDisplayFade, 1500);
 }
 
 function foodDisplayFade() {
     document.getElementById('foodDisplay').style.display = "none";
+    /*start the timer*/
+    startEasyTimer();
 }
 
 function comparing(userArr, correctArr) {
@@ -29,6 +33,7 @@ function comparing(userArr, correctArr) {
     }
     return true;
 }
+
 
 //first check then move!!!!!
 function outOfMap() {

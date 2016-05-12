@@ -1,10 +1,14 @@
-var fish = null;
+﻿var fish = null;
 var gameInfo = { w: 0, h: 0 }; //the size of the game UI
 var imgs = new Array(6);
 var movingTimer = null; //control the move of the blow fish
 var eatingOrderByUser = new Array(4);  //store the alt of element clicked by user
 var counter = 0; //record the food clicked
 var preFoodLoc = new Array(4);
+var lifeTime = 100;
+var easyTimer = null;
+var level = 2;
+var win = false;
 
 $(function () {
 	newgame();
@@ -41,6 +45,7 @@ function init() {
     //gameInfo.h = canvas.offsetHeight; //offset height
 	document.getElementById("js_start_loading").style.display = "none";
 	document.getElementById("js_start_btn").style.display = "block";
+	document.getElementById("js_tutor_btn").style.display = "block";
 	
 }
 
@@ -48,17 +53,45 @@ function start() {
     document.getElementById("js_start_flush").style.display = "none";
     randomFoodPlacement(imgs);
     //initiate the blowfish
-    fish = new Fish(150, 0, gameInfo);
+    //fish = new Fish(150, 0, gameInfo);
+
+    //set up the the time to max
+    document.getElementById("js_life").style.width = parseInt(lifeTime) + "px";
+    //startEasyTimer();
+}
+
+function startEasyTimer() {
+    clearInterval(easyTimer);
+    easyTimer = null;
+    lifeTime = 100;
+    easyTimer = setInterval('cutTime();', 100);
+}
+
+function cutTime() {
+    lifeTime--;
+    if (lifeTime == 0) {
+        alert("time is up");
+        clearInterval(easyTimer);
+        easyTimer = null;
+    }
+    document.getElementById("js_life").style.width = parseInt(lifeTime) + "px";
+}
+
+function stopTimer() {
+    clearInterval(easyTimer);
+    easyTimer = null;
 }
 
 function finishClick() {
-    //var piss = (counter == 4);
-    //alert(piss);
     if (counter == 4) {
-        if(comparing(eatingOrderByUser, getEatingOrderElem())) {
-            alert("yeah, good memory");
+        stopTimer();
+        if (comparing(eatingOrderByUser, getEatingOrderElem())) {
+            win = true;
+            over(win);
         } else {
-            alert("stupid man");
+            //alert("stupid man");
+            win = false;
+            over(win);
         }  
     }
 }
@@ -79,31 +112,47 @@ function eating(altt, id) {
         preFoodLoc[counter - 1].src = "./img/poop.png";
     }
 
-    //alert("click!!");
     document.getElementById(id).src = imgs[0].src;
     eatingOrderByUser[counter] = altt;
     counter = counter + 1;
-    //var eatpicArr = getEatingOrderElem();     //get the pictures of eating order
-    //alert(eatpicArr[1].alt);
-    //alert(altt);
-    //alert(altt.localeCompare(eatpicArr[1].alt));
-    //var i = 0;  //this is the counter for recording the user's click
-    //while (eatingOrderByUser[i].localeCompare("n") != 0) {
-    //    i++;
+    //for changing the picture of last fooditem
+    //if (counter == 4) {
+    //    preFoodLoc[counter - 1].src = "./img/poop.png";
     //}
-    //eatingOrderByUser[i] = altt;
-    //parseInt(i);
-    //alert(i == 4);
     finishClick();
 }
-
-
-
 
 function clearEatingOrderUser() {
     for (var i = 0; i < eatingOrderByUser.length; i++) {
         eatingOrderByUser[i] = "n";
     }
+}
+
+function over(flag){
+		
+  
+    //this.timeQuene.stop();
+
+
+    document.getElementById("js_end_flush").style.display = "block";
+    if(flag) {
+
+        document.getElementById("js_end_flush").getElementsByTagName("p")[0].innerHTML = "Good Job! You have completed <label>" + this.level + "</label>" + " level";
+        document.getElementById("js_end_flush").getElementsByTagName("a")[0].innerHTML = "Continue";
+        document.getElementById("js_end_flush").getElementsByTagName("span")[0].className = "icon happy";
+    }
+    else{
+        document.getElementById("js_end_flush").getElementsByTagName("p")[0].innerHTML = "Stupid! you only completed <label>" + this.level + "</label> level!";
+        document.getElementById("js_end_flush").getElementsByTagName("a")[0].innerHTML = "Replay";
+        document.getElementById("js_end_flush").getElementsByTagName("span")[0].className = "icon";
+    }
+
+    win = false;
+
+}
+
+function replay() {
+    randomFoodPlacement(imgs);
 }
 
 $(document).keydown(function(event) {
