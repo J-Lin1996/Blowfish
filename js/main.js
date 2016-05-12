@@ -60,6 +60,7 @@ function start() {
     //startEasyTimer();
 }
 
+
 function startEasyTimer() {
     clearInterval(easyTimer);
     easyTimer = null;

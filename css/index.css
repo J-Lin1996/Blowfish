@@ -50,6 +50,23 @@
     float:left;
 }
 
+#title {
+    /*position:absolute;*/
+    color: white;
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.middle {
+    margin: auto;
+    display: block;
+    margin-top: 40px;
+    width:180px;
+    height:150px;
+}
+
 .food1 {
     width:50px;
     height:50px;
