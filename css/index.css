@@ -10,9 +10,9 @@
         color-stop(0, #cfecf6),
         color-stop(0.61, #01b9f5)
     );*/
-    
+
     background: url(../img/background.png) no-repeat;
-   
+
     /*background-attachment:fixed;*/
     height:480px;
     width:320px;
@@ -25,7 +25,7 @@
     width:100px;
     height:10px;
     position: absolute;
-	
+
     z-index:2;
     left:10px;
     top:10px;
@@ -149,29 +149,29 @@
 #foodDisplay0 {
     width:40px;
     height:40px;
-    border:1px solid #dc00ff; 
-    float:left;  
+    border:1px solid #dc00ff;
+    float:left;
 }
 
 #foodDisplay1 {
     width:40px;
     height:40px;
     border:1px solid #dc00ff;
-    float:left; 
+    float:left;
 }
 
 #foodDisplay2 {
     width:40px;
     height:40px;
     border:1px solid #dc00ff;
-    float:left; 
+    float:left;
 }
 
 #foodDisplay3 {
     width:40px;
     height:40px;
     border:1px solid #dc00ff;
-    float:left; 
+    float:left;
 }
 
 .start_flush{
@@ -183,8 +183,8 @@
     /*
        change here background later..........
     */
-    background:url(../img/fish.png) no-repeat; 
-    z-index: 10; 
+    background:url(../img/fish.png) no-repeat;
+    z-index: 10;
 	background-size: 320px 480px;
 }
 
@@ -282,13 +282,13 @@
     display: inline-block;
     position: absolute;
     color:#fb0;
-    
+
 	text-shadow:1px 1px 1px #333333;
     bottom:20px;
     right:20px;
 	font-size:16px;
 	font-weight:bolder;
-	
+
 	text-decoration:none;
 	line-height:23px;
 }
@@ -296,22 +296,13 @@
 .end_flush .replay_btn:after{
 	content:"";
 	display:inline-block;
-	
+
 	background:url(../img/icons_btn.png) no-repeat right 0;
-	
+
     background-size: 19px 108px;
 	width:19px;
 	height:23px;
 	float:right;
-	
+
     padding-right: 5px;
 }
-
-
-
-
-
-
-
-
-

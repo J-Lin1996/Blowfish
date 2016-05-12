@@ -10,14 +10,15 @@
   <script type="text/javascript" src="js/fish.js"></script>
   <script type="text/javascript" src="js/seafood.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
-  
+  <script type="text/javascript" src="js/easterEgg.js"></script>
+
 
 
 </head>
 <body>
 	<div class="main" id="js_main" tabindex="-1">
         <!--<canvas id="canvas" width="320" height="480"></canvas>-->
-		
+
 		<div class="life">
 			<label id="js_life"></label>
 		</div>
@@ -31,17 +32,17 @@
         <div class="food1">
             <img src="" alt="Johnny" id="food-0" onclick="eating(alt, id)" />
         </div>
-        
+
         <!--food position 2-->
         <div class="food2">
             <img src="" alt="" id="food-1" onclick="eating(alt, id)" />
         </div>
-       
+
         <!--food position 3-->
         <div class="food3">
             <img src="" alt="" id="food-2" onclick="eating(alt, id)" />
         </div>
-        
+
         <!--food position 4-->
         <div class="food4">
             <img src="" alt="" id="food-3" onclick="eating(alt, id)" />
@@ -60,10 +61,10 @@
             <img src="img/blowfish.png" alt="blowfish" id="imgfish" />
         </div>
 
-		<div class="start_flush" id="js_start_flush">
+		<div class="start_flush" id="js_start_flush" onclick="clickEgg()">
 			<a href="javascript:void(0)" id="js_start_btn" style="display: none;"
-				class="start_btn" onclick="start()"> 
-			</a> 
+				class="start_btn" onclick="start()">
+			</a>
 			<span
 				id="js_start_loading"
 				style="position: absolute; left: 241px; top: 417px; font-size: 16px; font-weight: bolder;">Loading...

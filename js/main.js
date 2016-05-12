@@ -45,8 +45,12 @@ function init() {
     //gameInfo.h = canvas.offsetHeight; //offset height
 	document.getElementById("js_start_loading").style.display = "none";
 	document.getElementById("js_start_btn").style.display = "block";
+<<<<<<< Updated upstream
 	document.getElementById("js_tutor_btn").style.display = "block";
 	
+=======
+
+>>>>>>> Stashed changes
 }
 
 function start() {
@@ -89,10 +93,15 @@ function finishClick() {
             win = true;
             over(win);
         } else {
+<<<<<<< Updated upstream
             //alert("stupid man");
             win = false;
             over(win);
         }  
+=======
+            alert("stupid man");
+        }
+>>>>>>> Stashed changes
     }
 }
 
@@ -163,7 +172,7 @@ $(document).keydown(function(event) {
             //document.getElementById('imgfish').src = './img/crab.png';   //for testing
             clearInterval(movingTimer);
             movingTimer = null;
-            movingTimer = setInterval(' moveLeft();', 10);         
+            movingTimer = setInterval(' moveLeft();', 10);
             break;
         case 38: // up
             //change picture here
