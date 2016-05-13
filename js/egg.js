@@ -1,14 +1,14 @@
 var eggCounter = 0;
-var blowfish = document.getElementById("myBlowfish");
 
 function clickEgg() {
   if(eggCounter == 5) {
-    serverSashimi();
+    serveSashimi();
   } else {
     eggCounter += 1;
   }
 }
 
 function serveSashimi() {
-  blowfish.src = "../img/Sashimi.png";
+  var blowfish = document.getElementById("myBlowfish");
+  blowfish.src = "./img/Sashimi.png";
 }
