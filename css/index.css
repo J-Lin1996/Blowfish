@@ -73,7 +73,7 @@
     position: absolute;
     left:130px;
     top:50px;
-    border:4px solid #ffffff;
+    /*border:4px solid #ffffff;*/
 }
 
 .food1 img {
@@ -87,7 +87,7 @@
     position: absolute;
     left:230px;
     top:70px;
-    border:4px solid #589300;
+    /*border:4px solid #589300;*/
 }
 
 .food2 img {
@@ -101,7 +101,7 @@
     position: absolute;
     left:100px;
     top:200px;
-    border:4px solid #00bbff;
+    /*border:4px solid #00bbff;*/
 }
 
 .food3 img {
@@ -115,7 +115,7 @@
     position: absolute;
     left:200px;
     top:260px;
-    border:4px solid #ff5700;
+    /*border:4px solid #ff5700;*/
 }
 
 .food4 img {
@@ -134,7 +134,7 @@
 .blowfish img {
     width:70px;
     height:60px;
-    border:4px solid #ffffff;
+    /*border:4px solid #ffffff;*/
 }
 
 .level{
@@ -166,28 +166,28 @@
 #foodDisplay0 {
     width:40px;
     height:40px;
-    border:1px solid #dc00ff; 
+    /*border:1px solid #dc00ff;*/ 
     float:left;  
 }
 
 #foodDisplay1 {
     width:40px;
     height:40px;
-    border:1px solid #dc00ff;
+    /*border:1px solid #dc00ff;*/
     float:left; 
 }
 
 #foodDisplay2 {
     width:40px;
     height:40px;
-    border:1px solid #dc00ff;
+    /*border:1px solid #dc00ff;*/
     float:left; 
 }
 
 #foodDisplay3 {
     width:40px;
     height:40px;
-    border:1px solid #dc00ff;
+    /*border:1px solid #dc00ff;*/
     float:left; 
 }
 
