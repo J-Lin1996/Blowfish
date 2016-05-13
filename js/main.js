@@ -7,7 +7,7 @@ var counter = 0; //record the food clicked
 var preFoodLoc = new Array(4);
 var lifeTime = 100;
 var easyTimer = null;
-var level = 2;
+var level = 1;
 var win = false;
 
 $(function () {
@@ -24,16 +24,16 @@ function init() {
     imgs[0].src = './img/blowfish.png';
 
     imgs[1] = new Image();
-    imgs[1].src = './img/crab.png';
+    imgs[1].src = './img/starfish1.gif';
 
     imgs[2] = new Image();
-    imgs[2].src = './img/shrimp.png';
+    imgs[2].src = './img/shrimp1.gif';
 
     imgs[3] = new Image();
-    imgs[3].src = './img/squid.png';
+    imgs[3].src = './img/squid1.gif';
 
     imgs[4] = new Image();
-    imgs[4].src = './img/mussel.png';
+    imgs[4].src = './img/crab1.gif';
 
     for (var i = 0; i < eatingOrderByUser.length; i++) {
         eatingOrderByUser[i] = "n";
@@ -71,7 +71,7 @@ function startEasyTimer() {
 function cutTime() {
     lifeTime--;
     if (lifeTime == 0) {
-        alert("time is up");
+        timeUp();
         clearInterval(easyTimer);
         easyTimer = null;
     }
@@ -129,6 +129,11 @@ function clearEatingOrderUser() {
     }
 }
 
+function updateLevel() {
+    //level++;
+    document.getElementById('js_level').innerHTML = this.level;
+}
+
 function over(flag){
 		
   
@@ -137,13 +142,17 @@ function over(flag){
 
     document.getElementById("js_end_flush").style.display = "block";
     if(flag) {
-
         document.getElementById("js_end_flush").getElementsByTagName("p")[0].innerHTML = "Good Job! You have completed <label>" + this.level + "</label>" + " level";
+        this.level++;
+        
         document.getElementById("js_end_flush").getElementsByTagName("a")[0].innerHTML = "Continue";
         document.getElementById("js_end_flush").getElementsByTagName("span")[0].className = "icon happy";
     }
-    else{
-        document.getElementById("js_end_flush").getElementsByTagName("p")[0].innerHTML = "Stupid! you only completed <label>" + this.level + "</label> level!";
+    else {
+        
+        document.getElementById("js_end_flush").getElementsByTagName("p")[0].innerHTML = "Such a blowfish brain! you only completed <label>" + this.level + "</label> level!";
+        this.level = 1;
+
         document.getElementById("js_end_flush").getElementsByTagName("a")[0].innerHTML = "Replay";
         document.getElementById("js_end_flush").getElementsByTagName("span")[0].className = "icon";
     }
@@ -152,7 +161,18 @@ function over(flag){
 
 }
 
+function timeUp() {
+    
+    document.getElementById("js_end_flush").style.display = "block";
+    document.getElementById("js_end_flush").getElementsByTagName("p")[0].innerHTML = "Time up! stupid! you only completed <label>" + this.level + "</label> level!";
+    this.level = 1;
+    document.getElementById("js_end_flush").getElementsByTagName("a")[0].innerHTML = "Replay";
+    document.getElementById("js_end_flush").getElementsByTagName("span")[0].className = "icon";
+    win = false;
+}
+
 function replay() {
+    updateLevel();
     randomFoodPlacement(imgs);
 }
 

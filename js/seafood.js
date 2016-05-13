@@ -45,3 +45,5 @@ function generateOrderFood(foodImgs) {
 function getEatingOrderElem() {
     return eatingOrderElem;
 }
+
+
