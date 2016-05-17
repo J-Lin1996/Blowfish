@@ -1,10 +1,13 @@
-Blowfish Project:
-This is the beginning!
+Blowfish:
 
-Contributors: (add your name to this section and push to the master repository)
+
+Contributors:
 Jordan Lin
 Lei Pei
 Yin Wan (Johnny) Ng
 Lydia Kim
 Born Lee
-.
+
+Packages used:
+Nodejs
+mongodb

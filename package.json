@@ -1,6 +1,7 @@
 {
   "name": "blowfish",
   "version": "0.0.6",
+  "private": true,
   "description": "Blowfish memory game",
   "main": "index.html",
   "dependencies": {
