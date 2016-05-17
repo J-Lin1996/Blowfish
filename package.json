@@ -1,0 +1,23 @@
+{
+  "name": "blowfish",
+  "version": "0.0.6",
+  "description": "Blowfish memory game",
+  "main": "index.html",
+  "dependencies": {
+    "mongodb": "^2.1.19"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "fishtest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Jordan-Lin/Blowfish.git"
+  },
+  "author": "OutsideDeveloper",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jordan-Lin/Blowfish/issues"
+  },
+  "homepage": "https://github.com/Jordan-Lin/Blowfish#readme"
+}
