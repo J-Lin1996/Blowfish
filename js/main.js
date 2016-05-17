@@ -4,6 +4,7 @@ var imgs = new Array(7);
 var movingTimer = null; //control the move of the blow fish
 var eatingOrderByUser = new Array(4);  //store the alt of element clicked by user
 var eatingOrderByUser2 = new Array(5);
+var eatingOrderByUser3 = new Array(6);
 var counter = 0; //record the food clicked
 var preFoodLoc = new Array(6);  //this is 4 before
 var lifeTime = 100;
@@ -11,7 +12,8 @@ var easyTimer = null;
 var level = 1;
 var win = false;
 var cheating = true;
-var addfifthfood = false;  
+var addfifthfood = false;  //whether the fifth food item has been added
+var addsixthfood = false;  //whether the sixth food item has been added
 
 $(function () {
 	newgame();
@@ -48,6 +50,14 @@ function init() {
 
     for (var i = 0; i < eatingOrderByUser.length; i++) {
         eatingOrderByUser[i] = "n";
+    }
+
+    for (var i = 0; i < eatingOrderByUser2.length; i++) {
+        eatingOrderByUser2[i] = "n";
+    }
+
+    for (var i = 0; i < eatingOrderByUser3.length; i++) {
+        eatingOrderByUser3[i] = "n";
     }
 
 
@@ -104,8 +114,6 @@ function finishClick() {
             over(win);
         }
     }
-
-   
 }
 
 function finishClick2() {
@@ -113,6 +121,22 @@ function finishClick2() {
         stopTimer();
         cheating = true;
         if (comparing(eatingOrderByUser2, getEatingOrderElem2())) {
+            win = true;
+            over(win);
+        } else {
+            //alert("stupid man");
+            win = false;
+            over(win);
+        }
+    }
+
+}
+
+function finishClick3() {
+    if (counter == 6) {
+        stopTimer();
+        cheating = true;
+        if (comparing(eatingOrderByUser3, getEatingOrderElem3())) {
             win = true;
             over(win);
         } else {
@@ -140,9 +164,15 @@ function eating(altt, id) {
             counter = 0;
             document.getElementById('fatfish').style.display = "block";
         }
-    } else {
+    } else if(this.level <= 4) {
         if (counter == 5) {
             clearEatingOrderUser2();
+            counter = 0;
+            document.getElementById('fatfish').style.display = "block";
+        }
+    } else {
+        if (counter == 6) {
+            clearEatingOrderUser3();
             counter = 0;
             document.getElementById('fatfish').style.display = "block";
         }
@@ -164,11 +194,15 @@ function eating(altt, id) {
         eatingOrderByUser[counter] = altt;
         counter = counter + 1;
         finishClick();
-    } else {
+    } else if (this.level <= 4) {
         eatingOrderByUser2[counter] = altt;
         counter = counter + 1;
         finishClick2();
-    } 
+    } else {
+        eatingOrderByUser3[counter] = altt;
+        counter = counter + 1;
+        finishClick3();
+    }
 }
 
 function clearEatingOrderUser() {
@@ -179,7 +213,13 @@ function clearEatingOrderUser() {
 
 function clearEatingOrderUser2() {
     for (var i = 0; i < eatingOrderByUser2.length; i++) {
-        eatingOrderByUser[i] = "n";
+        eatingOrderByUser2[i] = "n";
+    }
+}
+
+function clearEatingOrderUser3() {
+    for (var i = 0; i < eatingOrderByUser3.length; i++) {
+        eatingOrderByUser3[i] = "n";
     }
 }
 
@@ -201,8 +241,19 @@ function over(flag){
         
         document.getElementById("js_end_flush").getElementsByTagName("p")[0].innerHTML = "Such a blowfish brain! you only completed <label>" + this.level + "</label> level!";
         this.level = 1;
-        addfifthfood = false;
-        deleteFoodElem('foodDisplay4');
+        if (addfifthfood) {
+            deleteFoodElem('foodDisplay4');
+            addfifthfood = false;
+        }
+
+        if (addsixthfood) {
+            deleteFoodElem2('foodDisplay5');
+            addsixthfood = false;
+        }
+        
+       
+        backToOriFoodCss(); //change the css to 4 food items
+          
         document.getElementById("js_end_flush").getElementsByTagName("a")[0].innerHTML = "Replay";
         document.getElementById("js_end_flush").getElementsByTagName("span")[0].className = "icon";
     }
@@ -216,8 +267,16 @@ function timeUp() {
     document.getElementById("js_end_flush").style.display = "block";
     document.getElementById("js_end_flush").getElementsByTagName("p")[0].innerHTML = "Time up! stupid! you only completed <label>" + this.level + "</label> level!";
     this.level = 1;
-    addfifthfood = false;
-    deleteFoodElem('foodDisplay4');
+    if (addfifthfood) {
+        deleteFoodElem('foodDisplay4');
+        addfifthfood = false;
+    }
+
+    if (addsixthfood) {
+        deleteFoodElem2('foodDisplay5');
+        addsixthfood = false;
+    }
+    backToOriFoodCss(); //change the css to 4 food items
     document.getElementById("js_end_flush").getElementsByTagName("a")[0].innerHTML = "Replay";
     document.getElementById("js_end_flush").getElementsByTagName("span")[0].className = "icon";
     win = false;
@@ -230,8 +289,16 @@ function noCheating() {
     document.getElementById("js_end_flush").style.display = "block";
     document.getElementById("js_end_flush").getElementsByTagName("p")[0].innerHTML = "No cheating!! Please click food items after display fades away!";
     this.level = 1;
-    addfifthfood = false;
-    deleteFoodElem('foodDisplay4');
+    if (addfifthfood) {
+        deleteFoodElem('foodDisplay4');
+        addfifthfood = false;
+    }
+
+    if (addsixthfood) {
+        deleteFoodElem2('foodDisplay5');
+        addsixthfood = false;
+    }
+    backToOriFoodCss(); //change the css to 4 food items
     document.getElementById("js_end_flush").getElementsByTagName("a")[0].innerHTML = "Replay";
     document.getElementById("js_end_flush").getElementsByTagName("span")[0].className = "icon";
     win = false; 
@@ -246,22 +313,43 @@ function clearEasyTimer() {
 
 function replay() {
     updateLevel();   
-    if (this.level > 2) {
-        //-----------------testing here
+    //if (this.level > 2) {
+    //    //-----------------testing here
+    //    if (!addfifthfood) {
+    //        addFoodDisplay(4);
+    //        document.getElementById('food5').style.display = "block";
+    //        addfifthfood = true;
+    //    }       
+    //    randomFoodPlacement2(imgs, this.level);
+    //} else {
+    //    randomFoodPlacement(imgs, this.level);
+    //}
+
+    if (this.level <= 2) {
+        randomFoodPlacement(imgs, this.level);
+    } else if (this.level <= 4) {
         if (!addfifthfood) {
             addFoodDisplay(4);
             document.getElementById('food5').style.display = "block";
             addfifthfood = true;
-        }       
+        }
         randomFoodPlacement2(imgs, this.level);
     } else {
-        randomFoodPlacement(imgs, this.level);
+        if (!addsixthfood) {
+            addFoodDisplay(5);
+            document.getElementById('food6').style.display = "block";
+            addsixthfood = true;
+        }
+        randomFoodPlacement3(imgs, this.level);
     }
 }
 
 function testt() {
     addFoodDisplay(4);
-    randomFoodPlacement2(imgs, this.level);
+    addFoodDisplay(5);
+    randomFoodPlacement3(imgs, this.level);
+    //generateFoodNumArr3(6);
+    //randomFoodPlacement2(imgs, this.level);
     //generateOrderFood2(imgs);
     //alert("yeah finished!!")
 }

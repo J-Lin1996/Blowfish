@@ -1,5 +1,5 @@
 .main{
-    /*background-color:#9dd9ed;*/
+    background-color:#9dd9ed;
     /*
        change background color to mimic ocean
     */
@@ -11,18 +11,14 @@
         color-stop(0.61, #01b9f5)
     );*/
     
-    background: url(../img/fish.png) no-repeat;
+    background: url(../img/background.png) no-repeat;
    
     /*background-attachment:fixed;*/
-    /*height:480px;*/
-    /*width:320px;*/
+    height:480px;
+    width:320px;
     position: relative;
-    /*left:50%;*/
-    /*margin-left:-160px;*/
-    width: 100%;
-    /*display: block;*/
-    min-height: 850px;
-    background-size: cover;
+    left:50%;
+    margin-left:-160px;
 }
 
 .life{
@@ -225,27 +221,18 @@
 
 .start_flush{
     position: absolute;
-    /*left:0;*/
-    /*top:0;*/
-
-    /*width:320px;*/
-    /*height:480px;*/
-    width: 100%;
-    min-height: 850px;
-
+    left:0;
+    top:0;
+    width:320px;
+    height:480px;
     /*
        change here background later..........
     */
-    background:url(../img/fish.png) no-repeat;
-    z-index: 10;
-	/*background-size: 320px 480px;*/
-	background-size: cover;
-
+    background:url(../img/fish.png) no-repeat; 
+    z-index: 10; 
+	background-size: 320px 480px;
 }
 
-/************************
-* Play button
-*************************/
 .start_btn{
     display: inline-block;
     position: absolute;
@@ -253,41 +240,28 @@
     height:60px;
     border:4px solid #ffffff;
     border-radius: 32px;
-    /*left:239px;*/
-    /*top:394px;*/
-    left: 68.95%;
-    top: 53.8%;
+    left:239px;
+    top:394px;
 }
 
-.start_btn img {
-    width:50px;
-    height:50px;
-    margin-left: 4px;
-    margin-top: 4px;
+.start_btn:before{
+    content:"";
+    display: inline-block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    border-top: 20px solid transparent;
+    border-left: 40px solid #feff01;
+    border-bottom: 20px solid transparent;
+    top:9px;
+    left:15px;
 }
-
-/*Yellow play button*/
-/*.start_btn:before{*/
-    /*content:"";*/
-    /*display: inline-block;*/
-    /*position: absolute;*/
-    /*width: 0;*/
-    /*height: 0;*/
-    /*overflow: hidden;*/
-    /*border-top: 20px solid transparent;*/
-    /*border-left: 40px solid #feff01;*/
-    /*border-bottom: 20px solid transparent;*/
-    /*top:9px;*/
-    /*left:15px;*/
-/*}*/
 
 .start_btn:active:before{
     border-left-color: #fb0;
 }
 
-/******************
-* Tutorial button
-******************/
 .tutor_btn{
     display: inline-block;
     position: absolute;
@@ -295,42 +269,16 @@
     height:60px;
     border:4px solid #ffffff;
     border-radius: 32px;
-    /*left:15px;*/
-    /*top:394px;*/
-    left:25.65%;
-	top: 53.8%;
+    left:15px;
+    top:394px;
 }
 
-.tutor_btn img{
+.tutor_btn img{   
     width:50px;
     height:50px;
     margin-left: 5px;
     margin-top: 5px;
 }
-
-/********************
-* Leader button
-********************/
-.leader_btn{
-    display: inline-block;
-    position: absolute;
-    width:60px;
-    height:60px;
-    border:4px solid #ffffff;
-    border-radius: 32px;
-    /*left:180px;*/
-    /*top:394px;*/
-    left: 47.3%;
-	top: 53.8%
-}
-
-.leader_btn img{
-    width: 50px;
-    height: 50px;
-    margin-left: 5px;
-    margin-top: 5px;
-}
-
 
 
 
@@ -402,140 +350,6 @@
 	float:right;
 	
     padding-right: 5px;
-}
-
-/* ----------- iPhone 6+ ----------- */
-
-/* Portrait and Landscape */
-@media only screen
-and (min-device-width: 414px)
-and (max-device-width: 736px)
-and (-webkit-min-device-pixel-ratio: 3) {
-
-}
-
-/* Portrait */
-@media only screen
-and (min-device-width: 414px)
-and (max-device-width: 736px)
-and (-webkit-min-device-pixel-ratio: 3)
-and (orientation: portrait) {
-	.start_flush{
-		min-height: 1470px;
-	}
-	
-	.main{
-		min-height: 1470px;
-	}
-	
-	
-	
-	#title {
-    color: white;
-    font-weight: bold;
-    font-size: 150px;
-    text-align: center;
-    margin-top: 20px;
-	}
-	
-	/******************
-	* Tutorial button
-	******************/
-	.tutor_btn{
-		display: inline-block;
-		position: absolute;
-		width:160px;
-		height:160px;
-		border:4px solid #ffffff;
-		border-radius: 82px;
-		/*left:15px;*/
-		/*top:394px;*/
-		left:14.65%;
-		top: 1000px;
-	}
-
-	.tutor_btn img{
-		width:150px;
-		height:150px;
-		margin-left: 5px;
-		margin-top: 5px;
-	}
-	
-	/********************
-	* Leader button
-	********************/
-	.leader_btn{
-		display: inline-block;
-		position: absolute;
-		width:160px;
-		height:160px;
-		border:4px solid #ffffff;
-		border-radius: 82px;
-		/*left:180px;*/
-		/*top:394px;*/
-		left: 40.3%;
-		top: 1000px;
-	}
-
-	.leader_btn img{
-		width: 150px;
-		height: 150px;
-		margin-left: 5px;
-		margin-top: 5px;
-	}
-		
-
-	/************************
-	* Play button
-	*************************/
-	.start_btn{
-		display: inline-block;
-		position: absolute;
-		width:160px;
-		height:160px;
-		border:4px solid #ffffff;
-		border-radius: 82px;
-		/*left:239px;*/
-		/*top:394px;*/
-		left: 65.95%;
-		top: 1000px;
-	}
-
-	.start_btn img {
-		width:150px;
-		height:150px;
-		margin-left: 4px;
-		margin-top: 4px;
-	}
-	
-
-
-}
-
-/* Landscape */
-@media only screen
-and (min-device-width: 414px)
-and (max-device-width: 736px)
-and (-webkit-min-device-pixel-ratio: 3)
-and (orientation: landscape) {
-	.start_flush{
-		min-height: 490px;
-	}
-	.main {
-		min-height: 490px;
-	}
-	.start_btn {
-		top: 325px;
-	}
-	
-	.tutor_btn {
-		top: 325px;
-	}
-	
-	.leader_btn {
-		top: 325px;
-	}
-	
 }
 
 

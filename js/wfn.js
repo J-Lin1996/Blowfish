@@ -6,6 +6,7 @@
 
 var foodNumArray = new Array(4);  //this is for  level 1 - 15
 var foodNumArray2 = new Array(5)  //this is for level 16 - 30
+var foodNumArray3 = new Array(6);
 
 
 /*
@@ -21,6 +22,12 @@ function clearFoodNumArr() {
 function clearFoodNumArr2(numFood) {
     for (var i = 0; i < numFood; i++) {
         foodNumArray2[i] = 100;
+    }
+}
+
+function clearFoodNumArr3(numFood) {
+    for (var i = 0; i < numFood; i++) {
+        foodNumArray3[i] = 100;
     }
 }
 
@@ -58,6 +65,26 @@ function foodDisplay2(foodOrderImgArr, level) {
         setTimeout(foodDisplayFade, 1500);
     } else {
         setTimeout(foodDisplayFade, 1000);
+    }
+}
+
+function foodDisplay3(foodOrderImgArr, level) {
+    document.getElementById('foodDisplay0').src = foodOrderImgArr[0].src;
+    document.getElementById('foodDisplay1').src = foodOrderImgArr[1].src;
+    document.getElementById('foodDisplay2').src = foodOrderImgArr[2].src;
+    document.getElementById('foodDisplay3').src = foodOrderImgArr[3].src;
+    document.getElementById('foodDisplay4').src = foodOrderImgArr[4].src;
+    document.getElementById('foodDisplay5').src = foodOrderImgArr[5].src;
+    document.getElementById('foodDisplay').style.display = "block";
+    stopTimer();
+    document.getElementById("js_life").style.width = 100 + "px";
+
+    if (level <= 10) {
+        setTimeout(foodDisplayFade, 2000);
+    } else if (level <= 30) {
+        setTimeout(foodDisplayFade, 2000);
+    } else {
+        setTimeout(foodDisplayFade, 3000);
     }
 }
 
@@ -127,6 +154,25 @@ function generateFoodNumArr2(numFood) {
     return foodNumArray2;
 }
 
+function generateFoodNumArr3(numFood) {
+    clearFoodNumArr3(numFood);
+    var count = 0;
+    while (true) {
+        if (count == 6) {
+            break;
+        }
+        var randx = parseInt(Math.floor(Math.random() * 6));
+        if (isRepeatedNum3(randx)) {
+            continue;
+        }
+        foodNumArray3[count] = randx;
+        count++;
+    }
+    
+
+    return foodNumArray3;
+}
+
 
 function isRepeatedNum(num) {
     for (var i = 0; i < foodNumArray.length; i++) {
@@ -140,6 +186,15 @@ function isRepeatedNum(num) {
 function isRepeatedNum2(num) {
     for (var i = 0; i < foodNumArray2.length; i++) {
         if (num == foodNumArray2[i]) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function isRepeatedNum3(num) {
+    for (var i = 0; i < foodNumArray3.length; i++) {
+        if (num == foodNumArray3[i]) {
             return true;
         }
     }
@@ -163,11 +218,18 @@ function addFoodDisplay(num) {
     imgDis.style.border = "1px solid #dc00ff";
     if (num == 4) {
         document.getElementById('foodDisplay').style.width = "210px";
+        document.getElementById('foodDisplay').style.left = "95px";
     } else {
         document.getElementById('foodDisplay').style.width = "250px";
+        document.getElementById('foodDisplay').style.left = "55px";
     }
     
     document.getElementById('foodDisplay').appendChild(imgDis);
+}
+
+function backToOriFoodCss() {
+    document.getElementById('foodDisplay').style.width = "170px";
+    document.getElementById('foodDisplay').style.left = "135px";
 }
 
 function deleteFoodElem(id) {
@@ -177,6 +239,16 @@ function deleteFoodElem(id) {
     }
     document.getElementById('food5').style.display = "none";
 }
+
+function deleteFoodElem2(id) {
+    var idObject = document.getElementById(id);
+    if (idObject != null) {
+        idObject.parentNode.removeChild(idObject);
+    }
+    document.getElementById('food6').style.display = "none";
+}
+
+
 
 
 

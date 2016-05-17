@@ -1,0 +1,367 @@
+/***************************
+* Background
+****************************/
+.tutorials {
+	width: auto;
+	min-height: 850px;
+	position: relative;
+	background: url(../img/fish.png) no-repeat;
+	background-size: cover;
+}
+
+.tutorialtitle {
+	position:absolute; 
+	top:0%; 
+	left:42%; 
+	font-size: 44px; 
+	font-weight: bold; 
+	font-family: calibri; 
+	color: #FFFF00;
+	display: block;
+}
+
+/******************
+* Blowfish
+******************/
+.fish {
+	position:absolute; 
+	top:64%; 
+	left:35%;
+}
+
+.fish img {
+	width:110px;
+	height:95px;
+}
+
+/******************
+* Crab food
+******************/
+.crab {
+	position:absolute; 
+	top:42%; 
+	left:33%;
+}
+
+.crab img {
+	width:65px;
+	height:45px;
+}
+
+/******************
+* Shrimp food
+******************/
+.shrimp {
+	position:absolute; 
+	top:28%; 
+	left:40%;
+}
+
+.shrimp img {
+	width:70px;
+	height:40px;
+}
+
+/******************
+* Mussel
+******************/
+.mussel {
+	position:absolute;
+	top:43%;
+	left:50%;
+}
+
+.mussel img {
+	width:35px;
+	height:55px;
+}
+
+/******************
+* Squid
+******************/
+.squid {
+	position:absolute;
+	top:29%;
+	left:59%;
+}
+
+.squid img {
+	width:35px;
+	height:50px;
+}
+
+/**************
+* Feed me message
+**************/
+.feedme {
+	position:absolute;
+	top:58%;
+	left:42%;
+}
+
+.feedme img {
+	 width:150px;
+	 height:67px;
+}
+
+/******************
+* Food order display
+*******************/
+.order {
+	position:absolute;
+	top:70%;
+	left:50%;
+}
+
+.order img {
+	 width:250px;
+	 height:80px;
+}
+
+/*********************
+* Left button go back
+*********************/
+
+.leftbutton {
+	position: absolute;
+	top: 80%;
+	left: 35%;
+}
+
+.leftbutton img {
+	width: 50px;
+	height: 50px;
+}
+
+
+
+/******************
+* iPhone 6+ Screen
+*******************/
+
+/* iPhone 6+: Portrait */
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: portrait) {
+	/*Mobile: Background*/
+	.tutorials {
+		min-height: 1470px;	
+	}
+
+	.tutorialtitle {
+		font-size: 120px; 
+		left: 29%;
+	}
+	
+	/*Mobile: Blowfish*/
+	.fish {
+		top: 60%;
+		left: 15%;
+	}
+
+	.fish img {
+		width: 230px;
+		height: 210px;
+	}
+	
+	/*Mobile: Food display*/
+	.order {
+		top:68%;
+		left:44%;
+	}
+
+	.order img {
+		 width:480px;
+		 height:120px;
+	}
+	
+	/*Mobile: Feed me message*/
+	.feedme {
+		top:53%;
+		left:33%;
+	}
+
+	.feedme img {
+		 width:300px;
+		 height:150px;
+	}
+	
+	/*Crab food*/
+	.crab {
+		position:absolute; 
+		top:42%; 
+		left:20%;
+	}
+
+	.crab img {
+		width:250px;
+		height:100px;
+	}
+
+	/*Shrimp food*/
+	.shrimp {
+		position:absolute; 
+		top:28%; 
+		left:60%;
+	}
+
+	.shrimp img {
+		width:250px;
+		height:100px;
+	}
+
+	/*Mussel*/
+	.mussel {
+		position:absolute;
+		top:43%;
+		left:60%;
+	}
+
+	.mussel img {
+		width:70px;
+		height:130px;
+	}
+
+	/*Squid*/
+	.squid {
+		position:absolute;
+		top:25%;
+		left:20%;
+	}
+
+	.squid img {
+		width:180px;
+		height:130px;
+	}
+	
+	/*Mobile: Next button*/
+	.leftbutton {
+		position: absolute;
+		top: 80%;
+		left: 25%;
+	}
+
+	.leftbutton img {
+		width: 160px;
+		height: 160px;
+	}
+		
+
+}	
+
+/* iPhone 6+: Landscape */
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: landscape) {
+	.tutorials {
+		min-height: 490px;	
+	}
+	.tutorialtitle {
+		margin-top: 25px;
+	}
+	
+	/*Shrimp food*/
+	.shrimp {
+
+		top:20%; 
+		left:40%;
+	}
+
+	.shrimp img {
+		width:60px;
+		height:60px;
+	}
+	
+	/*Crab food*/
+	.crab {
+		position:absolute; 
+		top:32%; 
+		left:30%;
+	}
+
+	.crab img {
+		width:60px;
+		height:60px;
+	}
+	
+	/*Squid food*/
+	.squid {
+		top:25%;
+		left:59%;
+	}
+
+	.squid img {
+		width:35px;
+		height:50px;
+	}
+	
+	.mussel {
+		position:absolute;
+		top:37%;
+		left:50%;
+	}
+
+	.mussel img {
+		width:35px;
+		height:55px;
+	}
+	
+	/*Blow fish*/
+	.fish {
+		top:55%; 
+		left:30%;
+	}
+
+	.fish img {
+		width:110px;
+		height:95px;
+	}	
+	
+	/*Feed me*/
+	.feedme {
+		position:absolute;
+		top:50%;
+		left:42%;
+	}
+
+	.feedme img {
+		 width:150px;
+		 height:67px;
+	}
+	
+	/*Food order display*/
+	.order {
+		position:absolute;
+		top:66%;
+		left:53%;
+	}
+
+	.order img {
+		 width:240px;
+		 height:50px;
+	}
+	
+	/*Mobile: Back screen button*/
+	.leftbutton {
+		top: 75%;
+		left: 38%;
+	}
+
+	.leftbutton img {
+		width: 60px;
+		height: 60px;
+	}
+	
+}
+	
+
+
+
+
+
+
+
