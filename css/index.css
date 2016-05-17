@@ -123,6 +123,34 @@
     height:50px;
 }
 
+.food5 {
+    width:50px;
+    height:50px;
+    position: absolute;
+    left:200px;
+    top:330px;
+    border:4px solid #ff5700;
+}
+
+.food5 img {
+    width:50px;
+    height:50px;
+}
+
+.food6 {
+    width:50px;
+    height:50px;
+    position: absolute;
+    left:50px;
+    top:100px;
+    border:4px solid #089300;
+}
+
+.food6 img {
+    width:50px;
+    height:50px;
+}
+
 .blowfish {
     width:70px;
     height:60px;

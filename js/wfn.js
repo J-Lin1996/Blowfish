@@ -1,6 +1,16 @@
-var foodNumArray = new Array(4);
+/*
+   level 1 - 15:  4 food Items, 2000m
+   level 16 - 30: 5 food Items, 1500m
+   level 31 - ??: 6 food Items, 1500m
+*/
+
+var foodNumArray = new Array(4);  //this is for  level 1 - 15
+var foodNumArray2 = new Array(5)  //this is for level 16 - 30
 
 
+/*
+  this is for resetting the food num array.
+*/
 function clearFoodNumArr() {
     foodNumArray[0] = 100;
     foodNumArray[1] = 100;
@@ -8,7 +18,13 @@ function clearFoodNumArr() {
     foodNumArray[3] = 100;
 }
 
-function foodDisplay(foodOrderImgArr) {
+function clearFoodNumArr2(numFood) {
+    for (var i = 0; i < numFood; i++) {
+        foodNumArray2[i] = 100;
+    }
+}
+
+function foodDisplay(foodOrderImgArr, level) {
     document.getElementById('foodDisplay0').src = foodOrderImgArr[0].src;
     document.getElementById('foodDisplay1').src = foodOrderImgArr[1].src;
     document.getElementById('foodDisplay2').src = foodOrderImgArr[2].src;
@@ -16,7 +32,33 @@ function foodDisplay(foodOrderImgArr) {
     document.getElementById('foodDisplay').style.display = "block";
     stopTimer();
     document.getElementById("js_life").style.width = 100 + "px";
-    setTimeout(foodDisplayFade, 1500);
+
+    if (level <= 10) {
+        setTimeout(foodDisplayFade, 2000);
+    } else if (level <= 30) {
+        setTimeout(foodDisplayFade, 1500);
+    } else {
+        setTimeout(foodDisplayFade, 1000);
+    } 
+}
+
+function foodDisplay2(foodOrderImgArr, level) {
+    document.getElementById('foodDisplay0').src = foodOrderImgArr[0].src;
+    document.getElementById('foodDisplay1').src = foodOrderImgArr[1].src;
+    document.getElementById('foodDisplay2').src = foodOrderImgArr[2].src;
+    document.getElementById('foodDisplay3').src = foodOrderImgArr[3].src;
+    document.getElementById('foodDisplay4').src = foodOrderImgArr[4].src;
+    document.getElementById('foodDisplay').style.display = "block";
+    stopTimer();
+    document.getElementById("js_life").style.width = 100 + "px";
+
+    if (level <= 10) {
+        setTimeout(foodDisplayFade, 2000);
+    } else if (level <= 30) {
+        setTimeout(foodDisplayFade, 1500);
+    } else {
+        setTimeout(foodDisplayFade, 1000);
+    }
 }
 
 function foodDisplayFade() {
@@ -34,11 +76,6 @@ function comparing(userArr, correctArr) {
     return true;
 }
 
-
-//first check then move!!!!!
-function outOfMap() {
-    var fishDiv = document.getElementById('fatfish');
-}
 
 
 function moveLeft() {
@@ -71,6 +108,26 @@ function generateFoodNumArr() {
     return foodNumArray;
 }
 
+
+function generateFoodNumArr2(numFood) {
+    clearFoodNumArr2(numFood);
+    var count = 0;
+    while (true) {
+        if (count == 5) {
+            break;
+        }
+        var randx = parseInt(Math.floor(Math.random() * 5));
+        if (isRepeatedNum2(randx)) {
+            continue;
+        }
+        foodNumArray2[count] = randx;
+        count++;
+    }
+
+    return foodNumArray2;
+}
+
+
 function isRepeatedNum(num) {
     for (var i = 0; i < foodNumArray.length; i++) {
         if (num == foodNumArray[i]) {
@@ -80,5 +137,50 @@ function isRepeatedNum(num) {
     return false;
 }
 
+function isRepeatedNum2(num) {
+    for (var i = 0; i < foodNumArray2.length; i++) {
+        if (num == foodNumArray2[i]) {
+            return true;
+        }
+    }
+    return false;
+}
 
-//check whether it is out of map, return boolean
+function invalidAllClick() {
+    document.getElementById('food-0').onclick = function () { };
+    document.getElementById('food-1').onclick = function () { };
+    document.getElementById('food-2').onclick = function () { };
+    document.getElementById('food-3').onclick = function () { };
+}
+
+function addFoodDisplay(num) {
+    var imgDis = document.createElement('img');
+    imgDis.style.height = "40px";
+    imgDis.style.width = "40px";
+    imgDis.style.float = "left";
+    imgDis.id = "foodDisplay" + num;
+    imgDis.src = "";
+    imgDis.style.border = "1px solid #dc00ff";
+    if (num == 4) {
+        document.getElementById('foodDisplay').style.width = "210px";
+    } else {
+        document.getElementById('foodDisplay').style.width = "250px";
+    }
+    
+    document.getElementById('foodDisplay').appendChild(imgDis);
+}
+
+function deleteFoodElem(id) {
+    var idObject = document.getElementById(id);
+    if (idObject != null) {
+        idObject.parentNode.removeChild(idObject);
+    }
+    document.getElementById('food5').style.display = "none";
+}
+
+
+
+var domCss = {
+
+
+};
