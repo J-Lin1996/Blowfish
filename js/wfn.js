@@ -39,7 +39,7 @@ function foodDisplay(foodOrderImgArr, level) {
     document.getElementById('foodDisplay').style.display = "block";
     stopTimer();
     document.getElementById("js_life").style.width = 100 + "px";
-
+	
     if (level <= 10) {
         setTimeout(foodDisplayFade, 2000);
     } else if (level <= 30) {
@@ -47,6 +47,7 @@ function foodDisplay(foodOrderImgArr, level) {
     } else {
         setTimeout(foodDisplayFade, 1000);
     } 
+	
 }
 
 function foodDisplay2(foodOrderImgArr, level) {
@@ -79,6 +80,7 @@ function foodDisplay3(foodOrderImgArr, level) {
     stopTimer();
     document.getElementById("js_life").style.width = 100 + "px";
 
+
     if (level <= 10) {
         setTimeout(foodDisplayFade, 2000);
     } else if (level <= 30) {
@@ -86,6 +88,7 @@ function foodDisplay3(foodOrderImgArr, level) {
     } else {
         setTimeout(foodDisplayFade, 3000);
     }
+	
 }
 
 function foodDisplayFade() {
@@ -210,26 +213,26 @@ function invalidAllClick() {
 
 function addFoodDisplay(num) {
     var imgDis = document.createElement('img');
-    imgDis.style.height = "40px";
-    imgDis.style.width = "40px";
+    imgDis.style.height = "125px";
+    imgDis.style.width = "125px";
     imgDis.style.float = "left";
     imgDis.id = "foodDisplay" + num;
     imgDis.src = "";
     imgDis.style.border = "1px solid #dc00ff";
     if (num == 4) {
-        document.getElementById('foodDisplay').style.width = "210px";
-        document.getElementById('foodDisplay').style.left = "95px";
+        document.getElementById('foodDisplay').style.width = "770px";
+        document.getElementById('foodDisplay').style.left = "100px";
     } else {
-        document.getElementById('foodDisplay').style.width = "250px";
-        document.getElementById('foodDisplay').style.left = "55px";
+        document.getElementById('foodDisplay').style.width = "770px";
+        document.getElementById('foodDisplay').style.left = "100px";
     }
     
     document.getElementById('foodDisplay').appendChild(imgDis);
 }
 
 function backToOriFoodCss() {
-    document.getElementById('foodDisplay').style.width = "170px";
-    document.getElementById('foodDisplay').style.left = "135px";
+    document.getElementById('foodDisplay').style.width = "770px";
+    document.getElementById('foodDisplay').style.left = "80px";
 }
 
 function deleteFoodElem(id) {
