@@ -38,7 +38,8 @@ function foodDisplay(foodOrderImgArr, level) {
     document.getElementById('foodDisplay3').src = foodOrderImgArr[3].src;
     document.getElementById('foodDisplay').style.display = "block";
     stopTimer();
-    document.getElementById("js_life").style.width = 100 + "px";
+    document.getElementById("js_life").style.width = 500 + "px";
+	
 	
     if (level <= 10) {
         setTimeout(foodDisplayFade, 2000);
@@ -58,7 +59,7 @@ function foodDisplay2(foodOrderImgArr, level) {
     document.getElementById('foodDisplay4').src = foodOrderImgArr[4].src;
     document.getElementById('foodDisplay').style.display = "block";
     stopTimer();
-    document.getElementById("js_life").style.width = 100 + "px";
+    document.getElementById("js_life").style.width = 500 + "px";
 
     if (level <= 10) {
         setTimeout(foodDisplayFade, 2000);
@@ -78,7 +79,7 @@ function foodDisplay3(foodOrderImgArr, level) {
     document.getElementById('foodDisplay5').src = foodOrderImgArr[5].src;
     document.getElementById('foodDisplay').style.display = "block";
     stopTimer();
-    document.getElementById("js_life").style.width = 100 + "px";
+    document.getElementById("js_life").style.width = 500 + "px";
 
 
     if (level <= 10) {
@@ -220,8 +221,8 @@ function addFoodDisplay(num) {
     imgDis.src = "";
     imgDis.style.border = "1px solid #dc00ff";
     if (num == 4) {
-        document.getElementById('foodDisplay').style.width = "770px";
-        document.getElementById('foodDisplay').style.left = "100px";
+        document.getElementById('foodDisplay').style.width = "650px";
+        document.getElementById('foodDisplay').style.left = "150px";
     } else {
         document.getElementById('foodDisplay').style.width = "770px";
         document.getElementById('foodDisplay').style.left = "100px";
@@ -231,8 +232,8 @@ function addFoodDisplay(num) {
 }
 
 function backToOriFoodCss() {
-    document.getElementById('foodDisplay').style.width = "770px";
-    document.getElementById('foodDisplay').style.left = "80px";
+    document.getElementById('foodDisplay').style.width = "510px";
+    document.getElementById('foodDisplay').style.left = "240px";
 }
 
 function deleteFoodElem(id) {

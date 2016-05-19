@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>blowfish</title>
+  <title>Blowfish</title>
 
   <link rel="stylesheet" type="text/css" href="css/index.css" />
   <script type="text/javascript" src="js/jquery-1.11.0.js"></script>
@@ -12,12 +12,12 @@
   <script type="text/javascript" src="js/main.js"></script>
   <script type="text/javascript" src="js/egg.js"></script>
 
-
 </head>
 <body>
 	<div class="main" id="js_main" tabindex="-1">
         <!--<canvas id="canvas" width="320" height="480"></canvas>-->
 		
+		<!-- life label -->
 		<div class="life">
 			<label id="js_life"></label>
 		</div>
@@ -48,16 +48,14 @@
         </div>
 
         <!--food position 5-->
-        <div class="food5" id="food5" style="display: block">
+        <div class="food5" id="food5" style="display: none">
             <img src="" alt="" id="food-4" onclick="eating(alt, id)" />
         </div>
 
         <!--food position 6-->
-        <div class="food6" id="food6" style="display: block">
+        <div class="food6" id="food6" style="display: none">
             <img src="" alt="" id="food-5" onclick="eating(alt, id)" />
         </div>
-
-
 
         <!--food order display-->
         <div class="foodDisplay" id="foodDisplay" style="display: block" onclick="testt()">
@@ -66,7 +64,8 @@
             <img src="" id="foodDisplay2"/>
             <img src="" id="foodDisplay3"/>
         </div>
-
+		
+		
         <div class="blowfish" id="fatfish" style="left:30px; display:block">
             <img src="img/blowfish.png" alt="blowfish" id="imgfish" />
         </div>
@@ -74,10 +73,11 @@
 		<div class="start_flush" id="js_start_flush">
 			<a href="javascript:void(0)" id="js_start_btn" style="display: none;"
 				class="start_btn" onclick="start()">
+				<!--play button -->
 				<img src="img/green_play.png" alt="green_play" />				
 			</a> 
             
-            <!------->
+            <!--blow fish in center of home screen-->
             <p id="title">Blowfish</p>
             <div class="blow">
                 <img src="img/blowfish.png" alt="" class="middle" onclick="clickEgg()" id="myblowfish" />
@@ -93,8 +93,8 @@
             <a href="" id="" style="" class="leader_btn">
                 <img src="img/leaderboard.png" alt="leader" />
             </a>
-            <!---->
-
+         
+			<!-- tutorial page button -->
             <a href="tutorial1.html" id="js_tutor_btn" style="display: none;"
                class="tutor_btn">
                 <img src="img/question.png" alt="tutorial" />
@@ -106,6 +106,8 @@
             <p></p>
             <a href="javascript:void(0)" class="replay_btn"
                onclick="replay()"></a>
+			<a href="" class="submit_btn"
+			   onclick="submit123()" style="display: none"></a>
         </div>
 	</div>
 </body>

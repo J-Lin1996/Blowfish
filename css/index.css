@@ -1,35 +1,21 @@
+/***********************
+* In-game background
+***********************/
 .main{
-    /*background-color:#9dd9ed;*/
-    /*
-       change background color to mimic ocean
-    */
-    /*background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #cfecf6),
-        color-stop(0.61, #01b9f5)
-    );*/
-    
     background: url(../img/fish.png) no-repeat;
-   
-    /*background-attachment:fixed;*/
-    /*height:480px;*/
-    /*width:320px;*/
     position: relative;
-    /*left:50%;*/
-    /*margin-left:-160px;*/
     width: 100%;
-    /*display: block;*/
     min-height: 850px;
     background-size: cover;
 }
 
+/***********************
+* Life bar
+***********************/
 .life{
     width:100px;
     height:10px;
     position: absolute;
-	
     z-index:2;
     left:10px;
     top:10px;
@@ -37,7 +23,6 @@
     border-radius: 7px;
     padding:1px;
 	background:white;
-
 }
 
 .life label{
@@ -54,8 +39,10 @@
     float:left;
 }
 
+/***********************
+* Home screen title
+***********************/
 #title {
-    /*position:absolute;*/
     color: white;
     font-weight: bold;
     font-size: 50px;
@@ -67,21 +54,20 @@
     margin: auto;
     display: block;
     margin-top: 40px;
-    width:180px;
-    height:150px;
+    width:330px;
+    height:300px;
 }
-/**********
-* Food 1 -white box
-***********/
+
+/***********************
+* Food 1 -white div box
+***********************/
 .food1 {
     width:50px;
     height:50px;
     position: absolute;
-    /*left:230px;
-    top:50px;*/
 	left: 65%;
 	top: 17%;
-    border:4px solid #ffffff; /*White*/
+    /*border:4px solid #ffffff;*/
 }
 
 .food1 img {
@@ -89,18 +75,16 @@
     height:50px;
 }
 
-/************
-* Food 2 -green box
-*************/
+/***********************
+* Food 2 -green div box
+***********************/
 .food2 {
     width:50px;
     height:50px;
     position: absolute;
-    /*left:230px;
-    top:70px;*/
 	left: 65%;
 	top: 35%;
-    border:4px solid #589300; /*Green*/
+    /*border:4px solid #589300; */
 }
 
 .food2 img {
@@ -108,37 +92,33 @@
     height:50px;
 }
 
-/*************
-* Food3 -light blue box
-**************/
+/****************************
+* Food 3 -light blue div box
+*****************************/
 .food3 {
     width:50px;
     height:50px;
     position: absolute;
-    /*left:100px;
-    top:200px;*/
 	left: 40%;
 	top: 17%;
-    border:4px solid #00bbff;
+    /*border:4px solid #00bbff;*/
 }
-
 
 .food3 img {
     width:50px;
     height:50px;
 }
-/***************
-* Food4 -purple box
-***************/
+
+/***********************
+* Food 4 -purple div box
+***********************/
 .food4 {
     width:50px;
     height:50px;
     position: absolute;
-    /*left:200px;
-    top:260px;*/
 	left: 40%;
 	top: 35%;
-    border:4px solid purple;
+    /*border:4px solid purple;*/
 }
 
 .food4 img {
@@ -146,19 +126,17 @@
     height:50px;
 }
 
-/********************
-* Food 5 -orange box
-*********************/
+/***********************
+* Food 5 -orange div box
+***********************/
 
 .food5 {
     width:50px;
     height:50px;
     position: absolute;
-    /*left:200px;
-    top:330px;*/
 	left: 65%;
 	top: 50%;
-    border:4px solid #ff5700; /*orange*/
+    /*border:4px solid #ff5700;*/ 
 }
 
 .food5 img {
@@ -166,16 +144,16 @@
     height:50px;
 }
 
-/**************
-*Food 6 - yellow box
-***************/
+/***********************
+* Food 6 -yellow div box
+***********************/
 .food6 {
     width:50px;
     height:50px;
     position: absolute;
     left:40%;
     top:50%;
-    border:4px solid yellow;
+    /*border:4px solid yellow;*/
 }
 
 .food6 img {
@@ -183,6 +161,9 @@
     height:50px;
 }
 
+/***********************
+* Blowfish
+***********************/
 .blowfish {
     width:170px;
     height:160px;
@@ -197,6 +178,9 @@
     /*border:4px solid #ffffff;*/
 }
 
+/***********************
+* Level display
+***********************/
 .level{
     position: absolute;
     z-index:2;
@@ -212,6 +196,9 @@
     font-weight: bolder;
 }
 
+/***********************
+* Food display container
+***********************/
 .foodDisplay {
     display: inline-block;
     position: absolute;
@@ -220,11 +207,9 @@
     border:4px solid #ffffff;
     left:135px;
     top:430px;
-	/*left: 42%;
-	top: 63%;*/
-
 }
 
+/*item 0 in display*/
 #foodDisplay0 {
     width:40px;
     height:40px;
@@ -232,6 +217,7 @@
     float:left;  
 }
 
+/*item 1 in display*/
 #foodDisplay1 {
     width:40px;
     height:40px;
@@ -239,6 +225,7 @@
     float:left; 
 }
 
+/*item 2 in display*/
 #foodDisplay2 {
     width:40px;
     height:40px;
@@ -246,6 +233,7 @@
     float:left; 
 }
 
+/*item 3 in display*/
 #foodDisplay3 {
     width:40px;
     height:40px;
@@ -253,26 +241,20 @@
     float:left; 
 }
 
-.start_flush1{
-	
-	
+/***********************
+* Start flush screen
+***********************/
+.start_flush{
     position: absolute;
-    /*left:0;*/
-    /*top:0;*/
-
-    /*width:320px;*/
-    /*height:480px;*/
     width: 100%;
     min-height: 850px;
-
     /*
        change here background later..........
     */
     background:url(../img/fish.png) no-repeat;
     z-index: 10;
-	/*background-size: 320px 480px;*/
-	background-size: cover;
 
+	background-size: cover;
 }
 
 /************************
@@ -298,28 +280,13 @@
     margin-top: 4px;
 }
 
-/*Yellow play button*/
-/*.start_btn:before{*/
-    /*content:"";*/
-    /*display: inline-block;*/
-    /*position: absolute;*/
-    /*width: 0;*/
-    /*height: 0;*/
-    /*overflow: hidden;*/
-    /*border-top: 20px solid transparent;*/
-    /*border-left: 40px solid #feff01;*/
-    /*border-bottom: 20px solid transparent;*/
-    /*top:9px;*/
-    /*left:15px;*/
-/*}*/
-
 .start_btn:active:before{
     border-left-color: #fb0;
 }
 
-/******************
+/***********************
 * Tutorial button
-******************/
+***********************/
 .tutor_btn{
     display: inline-block;
     position: absolute;
@@ -327,8 +294,6 @@
     height:60px;
     border:4px solid #ffffff;
     border-radius: 32px;
-    /*left:15px;*/
-    /*top:394px;*/
     left:25.65%;
 	top: 53.8%;
 }
@@ -340,9 +305,9 @@
     margin-top: 5px;
 }
 
-/********************
-* Leader button
-********************/
+/***********************
+* Leaderboard button
+***********************/
 .leader_btn{
     display: inline-block;
     position: absolute;
@@ -350,8 +315,6 @@
     height:60px;
     border:4px solid #ffffff;
     border-radius: 32px;
-    /*left:180px;*/
-    /*top:394px;*/
     left: 47.3%;
 	top: 53.8%
 }
@@ -363,9 +326,9 @@
     margin-top: 5px;
 }
 
-
-
-
+/***********************
+* End flush screen
+***********************/
 .end_flush{
     position: absolute;
     left:30px;
@@ -422,32 +385,22 @@
 	line-height:23px;
 }
 
-/*
-.end_flush .replay_btn:after{
-	content:"";
-	display:inline-block;
+.end_flush .submit_btn{
+	display: inline-block;
+	position: absolute;
+	color: green;
 	
-	background:url(../img/icons_btn.png) no-repeat right 0;
-	
-    background-size: 19px 108px;
-	width:19px;
-	height:23px;
-	float:right;
-	
-    padding-right: 5px;
+	bottom: 20px;
+	left: 20px;
+	font-size: 30px;
+	font-weight:bolder;
 }
-*/
 
 
+/*************************************/
 /* ----------- iPhone 6+ ----------- */
-
-/* Portrait and Landscape */
-@media only screen
-and (min-device-width: 414px)
-and (max-device-width: 736px)
-and (-webkit-min-device-pixel-ratio: 3) {
-
-}
+/***MP: Mobile Portrait              */
+/*************************************/
 
 /* Portrait */
 @media only screen
@@ -456,15 +409,17 @@ and (max-device-width: 736px)
 and (-webkit-min-device-pixel-ratio: 3)
 and (orientation: portrait) {
 	.start_flush{
-		min-height: 1470px;
+		min-height: 1715px;
+		/*1470px for iPhone 6+ Safari*/
 	}
 	
 	.main{
-		min-height: 1470px;
+		min-height: 1715px;
+		/*1470px for iPhone 6+ Safari*/
 	}
 	
 	/*************
-	* Title
+	* MP: Title
 	**************/
 	#title {
     color: white;
@@ -475,7 +430,7 @@ and (orientation: portrait) {
 	}
 	
 	/******************
-	* Tutorial button
+	* MP: Tutorial button
 	******************/
 	.tutor_btn{
 		display: inline-block;
@@ -484,12 +439,10 @@ and (orientation: portrait) {
 		height:160px;
 		border:4px solid #ffffff;
 		border-radius: 82px;
-		/*left:15px;*/
-		/*top:394px;*/
 		left:14.65%;
-		top: 1000px;
+		top: 1000px;	
 	}
-
+	
 	.tutor_btn img{
 		width:150px;
 		height:150px;
@@ -498,7 +451,7 @@ and (orientation: portrait) {
 	}
 	
 	/********************
-	* Leader button
+	* MP: Leader button
 	********************/
 	.leader_btn{
 		display: inline-block;
@@ -507,8 +460,6 @@ and (orientation: portrait) {
 		height:160px;
 		border:4px solid #ffffff;
 		border-radius: 82px;
-		/*left:180px;*/
-		/*top:394px;*/
 		left: 40.3%;
 		top: 1000px;
 	}
@@ -521,7 +472,7 @@ and (orientation: portrait) {
 	}
 		
 	/************************
-	* Play button
+	* MP: Play button
 	*************************/
 	.start_btn{
 		display: inline-block;
@@ -530,8 +481,6 @@ and (orientation: portrait) {
 		height:160px;
 		border:4px solid #ffffff;
 		border-radius: 82px;
-		/*left:239px;*/
-		/*top:394px;*/
 		left: 65.95%;
 		top: 1000px;
 	}
@@ -544,20 +493,19 @@ and (orientation: portrait) {
 	}
 	
 	/*****************************
-	* Gameplay begins here
+	* MP: Gameplay begins here
 	*****************************/
-	/**********
-	* Food 1 -white box
-	***********/
+	
+	/*******************
+	* MP: Food 1 -white div box
+	*******************/
 	.food1 {
 		width:150px;
 		height:150px;
 		position: absolute;
-		/*left:230px;
-		top:50px;*/
 		left: 60%;
 		top: 17%;
-		border:4px solid #ffffff; /*White*/
+		/*border:4px solid #ffffff;*/
 	}
 
 	.food1 img {
@@ -565,18 +513,16 @@ and (orientation: portrait) {
 		height:150px;
 	}
 
-	/************
-	* Food 2 -green box
-	*************/
+	/******************
+	* MP: Food 2 -green div box
+	*******************/
 	.food2 {
 		width:150px;
 		height:150px;
 		position: absolute;
-		/*left:230px;
-		top:70px;*/
 		left: 60%;
 		top: 34%;
-		border:4px solid #589300; /*Green*/
+		/*border:4px solid #589300;*/
 	}
 
 	.food2 img {
@@ -584,37 +530,33 @@ and (orientation: portrait) {
 		height:150px;
 	}
 
-	/*************
-	* Food3 -light blue box
-	**************/
+	/***************************
+	* MP: Food 3 -light blue div box
+	***************************/
 	.food3 {
 		width:150px;
 		height:150px;
 		position: absolute;
-		/*left:100px;
-		top:200px;*/
 		left: 26%;
 		top: 17%;
-		border:4px solid #00bbff;
+		/*border:4px solid #00bbff;*/
 	}
-
 
 	.food3 img {
 		width:150px;
 		height:150px;
 	}
-	/***************
-	* Food4 -purple box
-	***************/
+	
+	/***********************
+	* MP: Food 4 -purple div box
+	***********************/
 	.food4 {
 		width:150px;
 		height:150px;
 		position: absolute;
-		/*left:200px;
-		top:260px;*/
 		left: 26%;
 		top: 34%;
-		border:4px solid purple;
+		/*border:4px solid purple;*/
 	}
 
 	.food4 img {
@@ -622,10 +564,9 @@ and (orientation: portrait) {
 		height:150px;
 	}
 
-	/********************
-	* Food 5 -orange box
-	*********************/
-
+	/***********************
+	* MP: Food 5 -orange div box
+	************************/
 	.food5 {
 		width:150px;
 		height:150px;
@@ -634,7 +575,7 @@ and (orientation: portrait) {
 		top:330px;*/
 		left: 60%;
 		top: 50%;
-		border:4px solid #ff5700; /*orange*/
+		/*border:4px solid #ff5700;*/
 	}
 
 	.food5 img {
@@ -642,18 +583,21 @@ and (orientation: portrait) {
 		height:150px;
 	}
 
-	/**************
-	*Food 6 - yellow box
-	***************/
+	/************************
+	* MP: Food 6 - yellow div box
+	************************/
 	.food6 {
 		width:150px;
 		height:150px;
 		position: absolute;
 		left:26%;
 		top:50%;
-		border:4px solid yellow;
+		/*border:4px solid yellow;*/
 	}
-
+	
+	/*************
+	* MP: Blowfish
+	**************/
 	.food6 img {
 		width:150px;
 		height:150px;
@@ -663,8 +607,7 @@ and (orientation: portrait) {
 		width:170px;
 		height:160px;
 		position: absolute;
-		/*left:30px;*/
-		top:1150px;
+		top:1000px;
 	}
 
 	.blowfish img {
@@ -673,9 +616,9 @@ and (orientation: portrait) {
 		/*border:4px solid #ffffff;*/
 	}
 	
-	/*
-	* Portrait Mobile: Whole pop-up
-	*/
+	/*************
+	* MP: Flush /pop-up
+	**************/
 	.end_flush{
 		position: absolute;
 		left:170px;
@@ -703,9 +646,9 @@ and (orientation: portrait) {
 		background-size:210px 210px;
 	}
 	
-	/*
-	* Portrait Mobile: Message in popup paragraph
-	*/
+	/**********************
+	* MP: Message in popup
+	***********************/
 	.end_flush p{
 		display: inline-block;
 		float:right;
@@ -720,9 +663,10 @@ and (orientation: portrait) {
 	.end_flush p label{
 		color:#ff9900;
 	}
-	/*
-	* Portrait Mobile: Replay button
-	*/
+
+	/*******************
+	* MP: Replay button
+	*******************/
 	.end_flush .replay_btn{
 		display: inline-block;
 		position: absolute;
@@ -738,61 +682,55 @@ and (orientation: portrait) {
 		line-height:23px;
 	}
 	
-	/*
-	.end_flush .replay_btn:after{
-		content:"";
-		display:inline-block;
-		
-		background:url(../img/icons_btn.png) no-repeat right 0;
-		
-		background-size: 19px 108px;
-		width:30px;
-		height:23px;
-		float:right;
-		
-		padding-right: 5px;
+
+	/******************
+	* MP: Submit button
+	*******************/
+	.end_flush .submit_btn{
+		display: inline-block;
+		position: absolute;
+		color: green;
+		bottom: 30px;
+		left: 80px;
+		font-size: 50px;
+		font-weight:bolder;
+		text-decoration:none;
 	}
-	*/
 	
-	
+	/***************************
+	* MP: Food display container
+	***************************/
 	.foodDisplay {
 		display: inline-block;
 		position: absolute;
-		width:750px;
+		width:510px;
 		height:125px;
 		border:4px solid #ffffff;
-		/*left:135px;
-		top:430px;*/
-		
-		/*left: 42%;
-		top: 63%;*/
-		
-		left: 100px;
-		top: 1000px;
-
+		left: 240px;
+		top: 1200px;
 	}
-
+	/*MP: food item 0 in display*/
 	#foodDisplay0 {
 		width:125px;
 		height:125px;
 		/*border:1px solid #dc00ff;*/ 
 		float:left;  
 	}
-
+	/*MP: food item 1 in display*/
 	#foodDisplay1 {
 		width:125px;
 		height:125px;
 		/*border:1px solid #dc00ff;*/
 		float:left; 
 	}
-
+	/*MP: food item 2 in display*/
 	#foodDisplay2 {
 		width:125px;
 		height:125px;
 		/*border:1px solid #dc00ff;*/
 		float:left; 
 	}
-
+	/*MP: food item 3 in display*/
 	#foodDisplay3 {
 		width:125px;
 		height:125px;
@@ -800,9 +738,63 @@ and (orientation: portrait) {
 		float:left; 
 	}
 	
+	/***************
+	* MP: Life bar
+	***************/
+	.life{
+		width:500px;
+		height:50px;
+		position: absolute;
+		z-index:2;
+		left:30px;
+		top:30px;
+		border:1px solid #ff9900;
+		border-radius: 7px;
+		padding:1px;
+		background:white;
+
+	}
+
+	.life label{
+		/*
+		   inner block
+		   this is for life(HP)
+		   every time the blow fish eats food, the life (HP) will increase
+		*/
+		display: inline-block;
+		width: 0px;
+		height:50px;
+		background-color: #ff9900;
+		border-radius: 7px;
+		float:left;
+	}
+	
+	/*************
+	* MP: Level display
+	**************/
+	.level{
+		position: absolute;
+		z-index:2;
+		color:white;
+		font-size:70px;
+		right:50px;
+		top:20px;
+		font-weight:bolder;
+	}
+
+	.level span{
+		color: #fb0;
+		font-weight: bolder;
+	}
+			
 
 }
 
+	/*     Currently unavailable         */
+	/*************************************/
+	/* ----------- iPhone 6+ ----------- */
+	/***ML: Mobile Landscape             */
+	/*************************************/
 /* Landscape */
 @media only screen
 and (min-device-width: 414px)
@@ -827,21 +819,19 @@ and (orientation: landscape) {
 		top: 325px;
 	}
 	
-		/*****************************
+	/*****************************
 	* Gameplay begins here
 	*****************************/
 	/**********
-	* Food 1 -white box
+	* ML: Food 1 -white div box
 	***********/
 	.food1 {
 		width:150px;
 		height:150px;
 		position: absolute;
-		/*left:230px;
-		top:50px;*/
 		left: 65%;
 		top: 17%;
-		border:4px solid #ffffff; /*White*/
+		/*border:4px solid #ffffff; */
 	}
 
 	.food1 img {
@@ -849,18 +839,16 @@ and (orientation: landscape) {
 		height:150px;
 	}
 
-	/************
-	* Food 2 -green box
-	*************/
+	/**********************
+	* ML: Food 2 -green div box
+	**********************/
 	.food2 {
 		width:150px;
 		height:150px;
 		position: absolute;
-		/*left:230px;
-		top:70px;*/
 		left: 65%;
 		top: 35%;
-		border:4px solid #589300; /*Green*/
+		/*border:4px solid #589300;*/
 	}
 
 	.food2 img {
@@ -868,37 +856,32 @@ and (orientation: landscape) {
 		height:150px;
 	}
 
-	/*************
-	* Food3 -light blue box
-	**************/
+	/***********************
+	* ML: Food3 -light blue div box
+	************************/
 	.food3 {
 		width:150px;
 		height:150px;
 		position: absolute;
-		/*left:100px;
-		top:200px;*/
 		left: 40%;
 		top: 17%;
-		border:4px solid #00bbff;
+		/*border:4px solid #00bbff;*/
 	}
-
 
 	.food3 img {
 		width:150px;
 		height:150px;
 	}
 	/***************
-	* Food4 -purple box
+	* ML: Food4 -purple div box
 	***************/
 	.food4 {
 		width:150px;
 		height:150px;
 		position: absolute;
-		/*left:200px;
-		top:260px;*/
 		left: 40%;
 		top: 35%;
-		border:4px solid purple;
+		/*border:4px solid purple;*/
 	}
 
 	.food4 img {
@@ -907,18 +890,15 @@ and (orientation: landscape) {
 	}
 
 	/********************
-	* Food 5 -orange box
+	* ML: Food 5 -orange div box
 	*********************/
-
 	.food5 {
 		width:150px;
 		height:150px;
 		position: absolute;
-		/*left:200px;
-		top:330px;*/
 		left: 65%;
 		top: 50%;
-		border:4px solid #ff5700; /*orange*/
+		/*border:4px solid #ff5700; */
 	}
 
 	.food5 img {
@@ -927,7 +907,7 @@ and (orientation: landscape) {
 	}
 
 	/**************
-	*Food 6 - yellow box
+	* ML: Food 6 - yellow div box
 	***************/
 	.food6 {
 		width:150px;
@@ -935,7 +915,7 @@ and (orientation: landscape) {
 		position: absolute;
 		left:40%;
 		top:50%;
-		border:4px solid yellow;
+		/*border:4px solid yellow;*/
 	}
 
 	.food6 img {

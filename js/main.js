@@ -7,7 +7,7 @@ var eatingOrderByUser2 = new Array(5);
 var eatingOrderByUser3 = new Array(6);
 var counter = 0; //record the food clicked
 var preFoodLoc = new Array(6);  //this is 4 before
-var lifeTime = 100;
+var lifeTime = 500;
 var easyTimer = null;
 var level = 1;
 var win = false;
@@ -82,8 +82,8 @@ function startEasyTimer() {
     cheating = false;   
     clearInterval(easyTimer);
     easyTimer = null;
-    lifeTime = 100;
-    easyTimer = setInterval('cutTime();', 100);
+    lifeTime = 500;
+    easyTimer = setInterval('cutTime();', 30);
 }
 
 function cutTime() {
@@ -228,7 +228,7 @@ function updateLevel() {
 }
 
 function over(flag){
-	
+	//win
     document.getElementById("js_end_flush").style.display = "block";
     if(flag) {
         document.getElementById("js_end_flush").getElementsByTagName("p")[0].innerHTML = "Good Job! You have completed <label>" + this.level + "</label>" + " level";
@@ -236,10 +236,12 @@ function over(flag){
         
         document.getElementById("js_end_flush").getElementsByTagName("a")[0].innerHTML = "Continue";
         document.getElementById("js_end_flush").getElementsByTagName("span")[0].className = "icon happy";
+		document.getElementById("js_end_flush").getElementsByTagName("a")[1].style.display = "none";
     }
     else {
-        
+        //lose
         document.getElementById("js_end_flush").getElementsByTagName("p")[0].innerHTML = "Such a blowfish brain! you only completed <label>" + this.level + "</label> level!";
+		
         this.level = 1;
         if (addfifthfood) {
             deleteFoodElem('foodDisplay4');
@@ -256,16 +258,22 @@ function over(flag){
           
         document.getElementById("js_end_flush").getElementsByTagName("a")[0].innerHTML = "Replay";
         document.getElementById("js_end_flush").getElementsByTagName("span")[0].className = "icon";
+		document.getElementById("js_end_flush").getElementsByTagName("a")[1].style.display = "block";
+		document.getElementById("js_end_flush").getElementsByTagName("a")[1].innerHTML ="Submit";
+		 
+		
+		
     }
 
     win = false;
-
+	
 }
 
 function timeUp() {
     
     document.getElementById("js_end_flush").style.display = "block";
-    document.getElementById("js_end_flush").getElementsByTagName("p")[0].innerHTML = "Time up! stupid! you only completed <label>" + this.level + "</label> level!";
+    document.getElementById("js_end_flush").getElementsByTagName("p")[0].innerHTML = "Time up! You only completed <label>" + this.level + "</label> level!";
+	document.getElementById("js_end_flush").getElementsByTagName("a")[1].innerHTML ="Submit"; //johnny added for times up
     this.level = 1;
     if (addfifthfood) {
         deleteFoodElem('foodDisplay4');

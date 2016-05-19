@@ -1,6 +1,6 @@
 var eggCounter = 0;
-var h = 180;
-var w = 200;
+var h = 300;
+var w = 330;
 
 function clickEgg() {
   if(eggCounter == 5) {
@@ -17,8 +17,8 @@ function serveSashimi() {
     $("#myblowfish").animate({
         //left: '250px',
         //opacity: '0.5',
-        height: '280px',
-        width: '320px'
+        height: '580px',
+        width: '620px'
     }, 2000);
 }
 

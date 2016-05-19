@@ -90,9 +90,9 @@
 	height:50px;
 }
 
-/**************
+/*****************
 * Feed me message
-**************/
+*****************/
 .feedme {
 	position:absolute;
 	top:58%;
@@ -137,6 +137,7 @@
 
 /******************
 * iPhone 6+ Screen
+* MP: Mobile Portrait
 *******************/
 
 /* iPhone 6+: Portrait */
@@ -145,9 +146,10 @@ and (min-device-width: 414px)
 and (max-device-width: 736px)
 and (-webkit-min-device-pixel-ratio: 3)
 and (orientation: portrait) {
-	/*Mobile: Background*/
+	/*MP: Background*/
 	.tutorials {
-		min-height: 1470px;	
+		/*1470px for iPhone 6+ Safari*/
+		min-height: 1715px;	
 	}
 
 	.tutorialtitle {
@@ -155,7 +157,7 @@ and (orientation: portrait) {
 		left: 29%;
 	}
 	
-	/*Mobile: Blowfish*/
+	/*MP: Blowfish*/
 	.fish {
 		top: 60%;
 		left: 15%;
@@ -166,7 +168,7 @@ and (orientation: portrait) {
 		height: 210px;
 	}
 	
-	/*Mobile: Food display*/
+	/*MP: Food display*/
 	.order {
 		top:68%;
 		left:44%;
@@ -177,7 +179,7 @@ and (orientation: portrait) {
 		 height:120px;
 	}
 	
-	/*Mobile: Feed me message*/
+	/*MP: Feed me message*/
 	.feedme {
 		top:53%;
 		left:33%;
@@ -188,7 +190,7 @@ and (orientation: portrait) {
 		 height:150px;
 	}
 	
-	/*Crab food*/
+	/*MP: Crab food*/
 	.crab {
 		position:absolute; 
 		top:42%; 
@@ -197,10 +199,10 @@ and (orientation: portrait) {
 
 	.crab img {
 		width:250px;
-		height:100px;
+		height:130px;
 	}
 
-	/*Shrimp food*/
+	/*MP: Shrimp food*/
 	.shrimp {
 		position:absolute; 
 		top:28%; 
@@ -212,7 +214,7 @@ and (orientation: portrait) {
 		height:100px;
 	}
 
-	/*Mussel*/
+	/*MP: Mussel*/
 	.mussel {
 		position:absolute;
 		top:43%;
@@ -224,7 +226,7 @@ and (orientation: portrait) {
 		height:130px;
 	}
 
-	/*Squid*/
+	/*MP: Squid*/
 	.squid {
 		position:absolute;
 		top:25%;
@@ -236,7 +238,7 @@ and (orientation: portrait) {
 		height:130px;
 	}
 	
-	/*Mobile: Next button*/
+	/*MP: Next button*/
 	.leftbutton {
 		position: absolute;
 		top: 80%;
@@ -252,6 +254,8 @@ and (orientation: portrait) {
 }	
 
 /* iPhone 6+: Landscape */
+/* ML: Mobile Landscape */
+
 @media only screen
 and (min-device-width: 414px)
 and (max-device-width: 736px)
@@ -264,7 +268,7 @@ and (orientation: landscape) {
 		margin-top: 25px;
 	}
 	
-	/*Shrimp food*/
+	/*ML: Shrimp food*/
 	.shrimp {
 
 		top:20%; 
@@ -276,7 +280,7 @@ and (orientation: landscape) {
 		height:60px;
 	}
 	
-	/*Crab food*/
+	/*ML: Crab food*/
 	.crab {
 		position:absolute; 
 		top:32%; 
@@ -288,7 +292,7 @@ and (orientation: landscape) {
 		height:60px;
 	}
 	
-	/*Squid food*/
+	/*ML: Squid food*/
 	.squid {
 		top:25%;
 		left:59%;
@@ -299,6 +303,7 @@ and (orientation: landscape) {
 		height:50px;
 	}
 	
+	/*ML: Mussel food*/
 	.mussel {
 		position:absolute;
 		top:37%;
@@ -310,7 +315,7 @@ and (orientation: landscape) {
 		height:55px;
 	}
 	
-	/*Blow fish*/
+	/*ML: Blow fish*/
 	.fish {
 		top:55%; 
 		left:30%;
@@ -321,7 +326,7 @@ and (orientation: landscape) {
 		height:95px;
 	}	
 	
-	/*Feed me*/
+	/*ML: Feed me*/
 	.feedme {
 		position:absolute;
 		top:50%;
@@ -333,7 +338,7 @@ and (orientation: landscape) {
 		 height:67px;
 	}
 	
-	/*Food order display*/
+	/*ML: Food order display*/
 	.order {
 		position:absolute;
 		top:66%;
@@ -345,7 +350,7 @@ and (orientation: landscape) {
 		 height:50px;
 	}
 	
-	/*Mobile: Back screen button*/
+	/*ML: Back screen button*/
 	.leftbutton {
 		top: 75%;
 		left: 38%;
