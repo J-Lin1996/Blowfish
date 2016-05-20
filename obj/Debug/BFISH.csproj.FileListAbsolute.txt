@@ -1,0 +1,7 @@
+C:\workspace\.metadata\BFISH\BFISH\bin\BFISH.dll.config
+C:\workspace\.metadata\BFISH\BFISH\bin\BFISH.dll
+C:\workspace\.metadata\BFISH\BFISH\bin\BFISH.pdb
+C:\workspace\.metadata\BFISH\BFISH\bin\NVelocity.dll
+C:\workspace\.metadata\BFISH\BFISH\obj\Debug\BFISH.csprojResolveAssemblyReference.cache
+C:\workspace\.metadata\BFISH\BFISH\obj\Debug\BFISH.dll
+C:\workspace\.metadata\BFISH\BFISH\obj\Debug\BFISH.pdb

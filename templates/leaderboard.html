@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Leaderboard</title>
+    <link rel="stylesheet" type="text/css" href="../css/table.css" />
+	<link rel="stylesheet" type="text/css" href="../css/index.css" />
+    <script type="text/javascript" src="../js/database.js"></script>
+</head>
+<body>
+	<div class="main" id="js_main" tabindex="-1">
+	<div class="table-title">
+		<h3>Blowfish Ranking</h3>
+	</div>
+    <!--<a href="PersonEdit.ashx?Action=AddNew">Add to DB</a>-->
+<table class="table-fill">
+  <thead>
+	<tr>
+	  <th class="text-left">Rank</th>
+	  <th class="text-left">Name</th>
+	  <th class="text-left">Level</th>
+	</tr>
+  </thead>
+  <tbody class="table-hover">
+      #foreach($person in $Data)
+      <tr><td id="johnny"></td><td>$person.Name</td><td>$person.LevelS</td></tr>
+      <script>
+          increseIndex();
+      </script>
+      #end
+  </tbody>
+</table>
+</div>
+    <div class="homebutton" id="homebutton" style="position:absolute; top:85%; left:38px;">
+        <a href="index.html"><img src="img/homebutton.png" alt="homebutton" id="homebutton" /></a>
+    </div>
+</body>
+</html>

@@ -11,12 +11,13 @@
   <script type="text/javascript" src="js/seafood.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
   <script type="text/javascript" src="js/egg.js"></script>
+  <script type="text/javascript" src="js/music.js"></script>
 
 </head>
 <body>
 	<div class="main" id="js_main" tabindex="-1">
         <!--<canvas id="canvas" width="320" height="480"></canvas>-->
-		
+        
 		<!-- life label -->
 		<div class="life">
 			<label id="js_life"></label>
@@ -76,7 +77,9 @@
 				<!--play button -->
 				<img src="img/green_play.png" alt="green_play" />				
 			</a> 
-            
+            <button id="soundbtn">
+                <img src="img/sound.png" alt="sound_button" id="music" />
+            </button>
             <!--blow fish in center of home screen-->
             <p id="title">Blowfish</p>
             <div class="blow">
@@ -90,7 +93,7 @@
 			</span>
 			
 			<!--leaderboard-->
-            <a href="" id="" style="" class="leader_btn">
+            <a href="PersonList.ashx" id="" style="" class="leader_btn">
                 <img src="img/leaderboard.png" alt="leader" />
             </a>
          
@@ -106,8 +109,8 @@
             <p></p>
             <a href="javascript:void(0)" class="replay_btn"
                onclick="replay()"></a>
-			<a href="" class="submit_btn"
-			   onclick="submit123()" style="display: none"></a>
+			   
+			<a href="PersonEdit.ashx?Action=AddNew" id="database" class="submit_btn" style="display: none"></a>   
         </div>
 	</div>
 </body>

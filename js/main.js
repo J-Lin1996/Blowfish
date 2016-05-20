@@ -1,17 +1,17 @@
-﻿var fish = null;
+﻿var fish = null;   //this is for later blowfish animation
 var gameInfo = { w: 0, h: 0 }; //the size of the game UI
-var imgs = new Array(7);
+var imgs = new Array(7);  //the initialized game img array
 var movingTimer = null; //control the move of the blow fish
-var eatingOrderByUser = new Array(4);  //store the alt of element clicked by user
-var eatingOrderByUser2 = new Array(5);
-var eatingOrderByUser3 = new Array(6);
+var eatingOrderByUser = new Array(4);  //store the alt of element clicked by user (4 food itmes)
+var eatingOrderByUser2 = new Array(5);  //store the alt of element clicked by user (5 food itmes)
+var eatingOrderByUser3 = new Array(6);   //store the alt of element clicked by user  (6 food itmes)
 var counter = 0; //record the food clicked
-var preFoodLoc = new Array(6);  //this is 4 before
-var lifeTime = 500;
-var easyTimer = null;
-var level = 1;
-var win = false;
-var cheating = true;
+var preFoodLoc = new Array(6);  //this is 4 before and the blowfish will leave a poop 
+var lifeTime = 500;   // the timer css/html
+var easyTimer = null;  // the timer object
+var level = 1;   // the level of the game
+var win = false;   // did the user win
+var cheating = true;  // did the user cheat
 var addfifthfood = false;  //whether the fifth food item has been added
 var addsixthfood = false;  //whether the sixth food item has been added
 
@@ -23,6 +23,9 @@ function newgame() {
 	init();
 }
 
+/**
+  initialize the game when it is loading the page
+*/
 function init() {
     //get our images
     imgs[0] = new Image();
@@ -47,29 +50,31 @@ function init() {
     imgs[6].src = './img/peg.gif';
 
 
-
+    // initialize the array eatingOrderByUser (for 4 fooditems)
     for (var i = 0; i < eatingOrderByUser.length; i++) {
         eatingOrderByUser[i] = "n";
     }
 
-    for (var i = 0; i < eatingOrderByUser2.length; i++) {
+    // initialize the array eatingOrderByUser2 (for 5 fooditems)
+	for (var i = 0; i < eatingOrderByUser2.length; i++) {
         eatingOrderByUser2[i] = "n";
     }
 
-    for (var i = 0; i < eatingOrderByUser3.length; i++) {
+    // initialize the array eatingOrderByUser3 (for 6 fooditems)
+	for (var i = 0; i < eatingOrderByUser3.length; i++) {
         eatingOrderByUser3[i] = "n";
     }
 
-
-    //var canvas = document.getElementById("canvas");
-    //gameInfo.w = canvas.offsetWidth;  //offset width
-    //gameInfo.h = canvas.offsetHeight; //offset height
+    // showing the play button
 	document.getElementById("js_start_loading").style.display = "none";
 	document.getElementById("js_start_btn").style.display = "block";
 	document.getElementById("js_tutor_btn").style.display = "block";
 	
 }
 
+/**
+  start the game
+*/
 function start() {
     document.getElementById("js_start_flush").style.display = "none";
     randomFoodPlacement(imgs, this.level);
@@ -77,7 +82,9 @@ function start() {
     document.getElementById("js_life").style.width = parseInt(lifeTime) + "px";
 }
 
-
+/**
+  start the timer
+*/
 function startEasyTimer() {
     cheating = false;   
     clearInterval(easyTimer);
@@ -86,6 +93,9 @@ function startEasyTimer() {
     easyTimer = setInterval('cutTime();', 30);
 }
 
+/**
+  decreasing the timer
+*/
 function cutTime() {
     lifeTime--;
     if (lifeTime == 0) {
@@ -96,11 +106,17 @@ function cutTime() {
     document.getElementById("js_life").style.width = parseInt(lifeTime) + "px";
 }
 
+/**
+  stop the timer
+*/
 function stopTimer() {
     clearInterval(easyTimer);
     easyTimer = null;
 }
 
+/**
+  the user finished the click and comparing 4 food itmes
+*/
 function finishClick() {
     if (counter == 4) {
         stopTimer();
@@ -109,13 +125,15 @@ function finishClick() {
             win = true;
             over(win);
         } else {
-            //alert("stupid man");
             win = false;
             over(win);
         }
     }
 }
 
+/**
+  the user finished the click and comparing 5 food itmes
+*/
 function finishClick2() {
     if (counter == 5) {
         stopTimer();
@@ -132,6 +150,9 @@ function finishClick2() {
 
 }
 
+/**
+  the user finished the click and comparing 6 food itmes
+*/
 function finishClick3() {
     if (counter == 6) {
         stopTimer();
@@ -140,7 +161,6 @@ function finishClick3() {
             win = true;
             over(win);
         } else {
-            //alert("stupid man");
             win = false;
             over(win);
         }
@@ -148,10 +168,16 @@ function finishClick3() {
 
 }
 
+/**
+  clear the click counter
+*/
 function clearCounter() {
     counter = 0;
 }
 
+/**
+  the eating function will be triggled when the user clicks the food img
+*/
 function eating(altt, id) {
     if (cheating) {
         noCheating();
@@ -205,28 +231,43 @@ function eating(altt, id) {
     }
 }
 
+/**
+   Clear the eating order array for 4 food items
+ */
 function clearEatingOrderUser() {
     for (var i = 0; i < eatingOrderByUser.length; i++) {
         eatingOrderByUser[i] = "n";
     }
 }
 
+/**
+ Clear the eating order array for 5 food items
+ */
 function clearEatingOrderUser2() {
     for (var i = 0; i < eatingOrderByUser2.length; i++) {
         eatingOrderByUser2[i] = "n";
     }
 }
 
+/**
+ Clear the eating order array for 6 food items
+ */
 function clearEatingOrderUser3() {
     for (var i = 0; i < eatingOrderByUser3.length; i++) {
         eatingOrderByUser3[i] = "n";
     }
 }
 
+/**
+    Update the level to contain more items.
+ */
 function updateLevel() {
     document.getElementById('js_level').innerHTML = this.level;
 }
 
+/**
+    Game over page.
+ */
 function over(flag){
 	//win
     document.getElementById("js_end_flush").style.display = "block";
@@ -241,6 +282,8 @@ function over(flag){
     else {
         //lose
         document.getElementById("js_end_flush").getElementsByTagName("p")[0].innerHTML = "Such a blowfish brain! you only completed <label>" + this.level + "</label> level!";
+		
+		document.getElementById('database').href = "PersonEdit.ashx?Action=AddNew&Level=" + this.level;
 		
         this.level = 1;
         if (addfifthfood) {
@@ -269,10 +312,14 @@ function over(flag){
 	
 }
 
+/**
+    Times up page.
+ */
 function timeUp() {
     
     document.getElementById("js_end_flush").style.display = "block";
     document.getElementById("js_end_flush").getElementsByTagName("p")[0].innerHTML = "Time up! You only completed <label>" + this.level + "</label> level!";
+	document.getElementById("js_end_flush").getElementsByTagName("a")[1].style.display = "block";
 	document.getElementById("js_end_flush").getElementsByTagName("a")[1].innerHTML ="Submit"; //johnny added for times up
     this.level = 1;
     if (addfifthfood) {
@@ -291,10 +338,13 @@ function timeUp() {
 }
 
 
-/**/
+/**
+    Cheating prevention.
+ */
 function noCheating() {
     document.getElementById('foodDisplay').style.display = "none";
     document.getElementById("js_end_flush").style.display = "block";
+	document.getElementById("js_end_flush").getElementsByTagName("a")[1].style.display = "none";
     document.getElementById("js_end_flush").getElementsByTagName("p")[0].innerHTML = "No cheating!! Please click food items after display fades away!";
     this.level = 1;
     if (addfifthfood) {
@@ -313,12 +363,17 @@ function noCheating() {
     setTimeout(clearEasyTimer, 1500);
 }
 
+/**
+    Clear timer.
+ */
 function clearEasyTimer() {
     clearInterval(easyTimer);
     easyTimer = null;
 }
 
-
+/**
+    Replay button, replay the level.
+ */
 function replay() {
     updateLevel();   
     //if (this.level > 2) {
@@ -352,6 +407,9 @@ function replay() {
     }
 }
 
+/**
+    GAME TEST.
+ */
 function testt() {
     addFoodDisplay(4);
     addFoodDisplay(5);
@@ -361,30 +419,3 @@ function testt() {
     //generateOrderFood2(imgs);
     //alert("yeah finished!!")
 }
-
-
-$(document).keydown(function(event) {
-    switch (event.keyCode) {
-        case 37: // left
-            //change picture div fish
-            alert("hahaleft");
-            //document.getElementById('imgfish').src = './img/crab.png';   //for testing
-            clearInterval(movingTimer);
-            movingTimer = null;
-            movingTimer = setInterval(' moveLeft();', 10);         
-            break;
-        case 38: // up
-            //change picture here
-            alert("haharight");
-            clearInterval(movingTimer);
-            movingTimer = null;
-            document.getElementById('fatfish').style.display = "none";
-            break;
-        case 39:  //right
-            randomFoodPlacement(imgs);
-            break;
-        case 40: // down
-            break;
-    }
-});
-

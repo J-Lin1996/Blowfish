@@ -1,3 +1,7 @@
+/**
+  the javascript represents the the blow fish animation which will be used later
+*/
+
 var Fish = function (x, y, panelInfo) {
     this.x = x;
     this.y = y;
@@ -6,4 +10,3 @@ var Fish = function (x, y, panelInfo) {
     this.init();  //initialize
 };
 
-Fish.prototype

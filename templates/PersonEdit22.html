@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>PersonEdit</title>
+</head>
+<body>
+    <form action="PersonEdit.ashx" method="post">
+        <input type="hidden" name="Action" value="AddNew" />
+        <input type="hidden" name="Save" value="true" />
+        <table>
+            <tr><td>Name：</td><td><input type="text" name="Name" value="$Data.Name" /></td></tr>
+            <tr><td></td><td><input type="hidden" name="LevelS" value="$Data.LevelS" id="levelDisplay" /></td></tr>
+            <tr><td></td><td><input type="submit" value="Save" /></td></tr>
+        </table>
+    </form>
+</body>
+</html>

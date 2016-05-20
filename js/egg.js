@@ -1,7 +1,10 @@
-var eggCounter = 0;
-var h = 300;
-var w = 330;
+var eggCounter = 0;  // the number of clicks
+var h = 300;   // the height of the easter egg
+var w = 330;   // the width of the easter egg
 
+/**
+ * the function that records the increment of the click.
+ */
 function clickEgg() {
   if(eggCounter == 5) {
     serveSashimi();
@@ -11,6 +14,9 @@ function clickEgg() {
   }
 }
 
+/**
+ * change the image to Sashimi.
+ */
 function serveSashimi() {
     var blowfish = document.getElementById('myblowfish');
     blowfish.src = "./img/Sashimi.png";
@@ -22,6 +28,9 @@ function serveSashimi() {
     }, 2000);
 }
 
+/**
+ *  change the picture of the easter egg / blow fish using JQuery
+ */
 function changePic() {
     var blowfishh = document.getElementById('myblowfish');
     //blowfish.src = "./img/Sashimi.png";

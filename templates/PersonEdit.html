@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>PersonEdit</title>
+   
+</head>
+
+<style>
+#main {
+	background:url(img/submitBackground.jpg) no-repeat;
+	right 0; 
+	background-size: cover; 
+	min-height: 1715px;"
+}
+</style>
+
+<body>
+	<div id="main">
+    <h1 style="padding-left:112px; padding-top: 40px; margin: 0px; font-size: 650%; color:white;">Congratulations!</h1>
+	<div class="balloons" id="balloons" style="position:absolute; top:20%; left:32%;">
+        <img src="img/balloons.png" alt="balloons" id="balloons" width="395px" height="460px" />
+    </div>
+	
+    <form action="PersonEdit.ashx" method="post" style=" width:350px; height:500px; margin-left: 100px; margin-top: 725px;">
+	  <fieldset style="border:10px orange dotted; width: 350px; height: 325px;">
+	    <legend align="center" style="font-size: 380%; font-weight:bold; color:white">Submit your new score</legend>
+        <input type="hidden" name="Action" value="AddNew" />
+        <input type="hidden" name="Save" value="true" />
+        <table>
+            <tr><td style="font-size:350%; font-weight:bold; color:white;">Name：</td><td><input type="text" name="Name" value="$Data.Name" style="font-size:250%;"/></td></tr>
+            </br>
+			</br>
+			<tr><td></td><td><input type="hidden" name="LevelS" value="$Data.LevelS" id="levelDisplay"/></td></tr>
+            <tr><td></td><td><input type="submit" value="Submit" style="background-color:white; margin-left:250px; margin-top:40px; width:240px; height:70px; font-size: 260%; font-weight: bold;"/></td></tr>
+		</table>
+	  </fieldset>
+    </form>
+	</div>
+	
+</body>
+</html>

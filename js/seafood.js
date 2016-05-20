@@ -1,24 +1,26 @@
-﻿var eatingOrder = new Array(4);  //stored images here
-var eatingOrderElem = new Array(4); //stored the order of eating elements
+﻿var eatingOrder = new Array(4);    //stored images here for 4 food items
+var eatingOrderElem = new Array(4);   //stored the order of eating elements for 4 food items
 
 
-var eatingOrder2 = new Array(5);
-var eatingOrderElem2 = new Array(5);
+var eatingOrder2 = new Array(5);   //stored images here for 5 food items
+var eatingOrderElem2 = new Array(5);  //stored the order of eating elements for 5 food items
 
-var eatingOrder3 = new Array(6);
-var eatingOrderElem3 = new Array(6);
+var eatingOrder3 = new Array(6);  //stored images here for 6 food items
+var eatingOrderElem3 = new Array(6);  //stored the order of eating elements for 6 food items
 
+
+/**
+ * the random seafood placement for 4 fooditems
+ * @param foodImgs  the array of food images
+ * @param level   the level of this game
+ */
 function randomFoodPlacement(foodImgs, level) {
     var foodNum = generateFoodNumArr(); //get the foodNum array
-    //var foodPosition = $("#food-" + foodNum[0]);  //get the img element on which the food will be placed
-
     document.getElementById("js_end_flush").style.display = "none";
-
     generateOrderFood(foodImgs);
     document.getElementById('fatfish').style.display = "block";
-    clearCounter();
-    //var foodPosition = document.getElementById('food-' + foodNum[0]);
-    //foodPosition.src = foodImgs[2].src;
+    clearCounter();   // clear the counter of the of game
+
     document.getElementById('food-' + foodNum[0]).src = eatingOrder[0].src;
     document.getElementById('food-' + foodNum[0]).alt = "a";
     eatingOrderElem[0] = document.getElementById('food-' + foodNum[0]);
@@ -42,6 +44,11 @@ function randomFoodPlacement(foodImgs, level) {
 
 }
 
+/**
+ * the random seafood placement for 5 fooditems
+ * @param foodImgs the array of food images
+ * @param level the level of this game
+ */
 function randomFoodPlacement2(foodImgs, level) {
     var foodNum = generateFoodNumArr2(5);  //get the foodNum array
  
@@ -78,6 +85,11 @@ function randomFoodPlacement2(foodImgs, level) {
 
 }
 
+/**
+ * the random seafood placement for 6 fooditems
+ * @param foodImgs the array of food images
+ * @param level the level of this game
+ */
 function randomFoodPlacement3(foodImgs, level) {
     var foodNum = generateFoodNumArr3(6);  //get the foodNum array
 
@@ -118,16 +130,23 @@ function randomFoodPlacement3(foodImgs, level) {
 
 }
 
+/**
+ * fill up the eating order array.
+ * @param foodImgs the seafood images
+ */
 function generateOrderFood(foodImgs) {
     var arr = generateFoodNumArr();
     eatingOrder[arr[0]] = foodImgs[1];
     eatingOrder[arr[1]] = foodImgs[2];
     eatingOrder[arr[2]] = foodImgs[3];
     eatingOrder[arr[3]] = foodImgs[4];
-
-    //return eatingOrder;
+    
 }
 
+/**
+ * fill up the eating order array for 5 food itmes.
+ * @param foodImgs the seafood images 
+ */
 function generateOrderFood2(foodImgs) {
     var arr = generateFoodNumArr2(5);
     eatingOrder2[arr[0]] = foodImgs[1];
@@ -135,14 +154,13 @@ function generateOrderFood2(foodImgs) {
     eatingOrder2[arr[2]] = foodImgs[3];
     eatingOrder2[arr[3]] = foodImgs[4];
     eatingOrder2[arr[4]] = foodImgs[5];
-
-    //for (var i = 0; i < eatingOrder2.length; i++) {
-    //    alert(eatingOrder2[i]);
-    //}
-
-    //return eatingOrder;
+    
 }
 
+/**
+ * fill up the eating order array for 6 food itmes.
+ * @param foodImgs  the seafood images
+ */
 function generateOrderFood3(foodImgs) {
     var arr = generateFoodNumArr3(6);
     eatingOrder3[arr[0]] = foodImgs[1];
@@ -152,21 +170,28 @@ function generateOrderFood3(foodImgs) {
     eatingOrder3[arr[4]] = foodImgs[5];
     eatingOrder3[arr[5]] = foodImgs[6];
 
-    //for (var i = 0; i < eatingOrder2.length; i++) {
-    //    alert(eatingOrder2[i]);
-    //}
-
-    //return eatingOrder;
 }
 
+/**
+ * get eating order html elements for 4 food items
+ * @returns {Array}
+ */
 function getEatingOrderElem() {
     return eatingOrderElem;
 }
 
+/**
+ * get eating order html elements for 5 food items
+ * @returns {Array}
+ */
 function getEatingOrderElem2() {
     return eatingOrderElem2;
 }
 
+/**
+ * get eating order html elements for 6 food items
+ * @returns {Array}
+ */
 function getEatingOrderElem3() {
     return eatingOrderElem3;
 }
