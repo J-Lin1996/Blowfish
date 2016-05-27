@@ -1,0 +1,60 @@
+.main{
+    background: url(../img/fish.png) no-repeat;
+    width: 100%;
+	right:0;
+	left:0;
+    background-size: cover;
+	z-index: 1;
+	text-align: center;
+	margin: auto;
+	position: fixed; /* or absolute */
+
+}
+button.but {
+    width: 150px;
+    height: 75px;
+    font-size: 50px;
+    font-weight: bold;
+    margin-right: 200px;
+}
+button.butt {
+    width: 150px;
+    height: 75px;
+    font-size: 50px;
+    font-weight: bold;
+    margin-left: 175px;
+}
+h1 {
+	
+	margin-bottom: 100px;
+
+}
+.title{
+	color: white;
+	margin-left: -40px;
+	margin-bottom: 150px;
+
+}
+p{
+	font-size: 80px;
+	margin-left: 1px;
+	color: white;
+	font-weight: bold;
+}
+#title{
+	font-size: 100px;
+}
+.row{
+	margin-bottom: 60px;
+}
+img{
+	width: 300px;
+	height: 300px;
+	margin-left: -80px;
+}
+@media screen and (min-width: 300px) {
+	.main{
+		  width: 100%;
+  height: 100%;
+	}
+}

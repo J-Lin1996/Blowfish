@@ -1,0 +1,122 @@
+#main {
+	background: url(../img/submitBackground.jpg) no-repeat;
+	left: 0;
+    background-size: cover;
+	width: 100%;
+	position: relative;
+}
+
+#message {
+	margin-top: 2%;
+    text-align: center;
+	font-size: 420%; 
+	font-weight: bold; 
+	color: white;
+	display: block;
+}
+
+.balloons {
+	position:absolute; 
+	top:20%; 
+	left:45%;
+}
+
+.balloons img {
+	width: 125px; 
+	height: 160px;
+}
+
+#form{
+	width:550px; 
+	height:300px; 
+	margin-left: 35%; 
+	margin-top: 20%;
+}
+
+#fieldset {
+	border:3px orange dotted; 
+	width: 420px; 
+	height: 195px;
+}
+
+#legend {
+	text-align:center; 
+	font-size: 180%; 
+	font-weight:bold; 
+	color:white;
+}
+
+#name {
+	font-size:250%; 
+	font-weight:bold; 
+	color:white;
+	padding-left: 10px;
+}
+
+#dataName {
+	font-size:140%;
+}
+
+#submit {
+	background-color:white; 
+	margin-left:45.5%; 
+	margin-top:5%; 
+	width:55%; 
+	height:90%; 
+	font-size: 160%; 
+	font-weight: bold;
+}
+
+
+
+/******************
+* Big screen size
+******************/
+@media screen and (min-width: 300px) {	
+    #main {
+		position: fixed;
+	}
+}
+
+/******************
+* Small screen size
+******************/
+@media screen and (max-width: 450px) {
+	#main {
+		height: 100%;
+	}
+	
+	#message {
+		margin-top: 8%;
+		font-size: 280%;
+	}
+	
+	.balloons {
+		left: 35%;
+	}
+	
+	#form {
+		margin-left: 15%; 
+		margin-top: 65%;
+	}
+	
+	#fieldset {
+		width: 300px;
+		height: 156px;
+	}
+	
+	#name {
+		font-size: 140%;
+	}
+	
+	#dataName {
+		font-size:120%;
+	}
+
+	#submit {
+		margin-left: 50%;
+		width: 100px;
+		height: 40px;
+	}
+
+}

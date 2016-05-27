@@ -2,22 +2,48 @@
 * Background
 ****************************/
 .tutorials {
-	width: auto;
+	width: 100%;
 	min-height: 850px;
 	position: relative;
 	background: url(../img/fish.png) no-repeat;
 	background-size: cover;
+	left: 0;
 }
 
+/************************************
+* Title
+*************************************/
 .tutorialtitle {
-	position:absolute; 
-	top:0%; 
-	left:42%; 
+    margin-top: 20px;
+    text-align: center;
 	font-size: 44px; 
 	font-weight: bold; 
-	font-family: calibri; 
 	color: #FFFF00;
 	display: block;
+}
+
+/******************
+* sound button
+******************/
+#soundbtn {
+	/*background:url(../img/sound.png) no-repeat;*/
+    background-size: cover;
+	display:inline-block;
+    position:absolute;
+	margin-left:48%;
+	border:4px solid #ffffff;
+    border-top-left-radius:40px;
+	border-top-right-radius:40px;
+	border-bottom-left-radius:40px;
+    border-bottom-right-radius:40px;
+	right: 3%;
+	top: 2.8%;
+	cursor: pointer;
+}
+
+#soundbtn img {
+    width:40px;
+	height:50px;
 }
 
 /******************
@@ -25,7 +51,7 @@
 ******************/
 .fish {
 	position:absolute; 
-	top:64%; 
+	top:56%; 
 	left:35%;
 }
 
@@ -39,8 +65,8 @@
 ******************/
 .crab {
 	position:absolute; 
-	top:42%; 
-	left:33%;
+	top:36%; 
+	left:36%;
 }
 
 .crab img {
@@ -53,8 +79,8 @@
 ******************/
 .shrimp {
 	position:absolute; 
-	top:28%; 
-	left:40%;
+	top:22%; 
+	left:43%;
 }
 
 .shrimp img {
@@ -67,8 +93,8 @@
 ******************/
 .mussel {
 	position:absolute;
-	top:43%;
-	left:50%;
+	top:37%;
+	left:53%;
 }
 
 .mussel img {
@@ -81,7 +107,7 @@
 ******************/
 .squid {
 	position:absolute;
-	top:29%;
+	top:22%;
 	left:59%;
 }
 
@@ -95,13 +121,13 @@
 *****************/
 .feedme {
 	position:absolute;
-	top:58%;
-	left:42%;
+	top:49%;
+	left:40%;
 }
 
 .feedme img {
 	 width:150px;
-	 height:67px;
+	 height:70px;
 }
 
 /******************
@@ -109,13 +135,13 @@
 *******************/
 .order {
 	position:absolute;
-	top:70%;
+	top:63%;
 	left:50%;
 }
 
 .order img {
-	 width:250px;
-	 height:80px;
+	 width:200px;
+	 height:50px;
 }
 
 /*********************
@@ -124,7 +150,7 @@
 
 .leftbutton {
 	position: absolute;
-	top: 80%;
+	top: 75%;
 	left: 35%;
 }
 
@@ -133,238 +159,114 @@
 	height: 50px;
 }
 
+/*********************
+* Play button
+*********************/
 
+.playGame {
+	position: absolute;
+	top: 75%;
+	right: 35%;
+}
+
+.playGame img {
+	width: 50px;
+	height: 50px;
+}
 
 /******************
-* iPhone 6+ Screen
-* MP: Mobile Portrait
-*******************/
-
-/* iPhone 6+: Portrait */
-@media only screen
-and (min-device-width: 414px)
-and (max-device-width: 736px)
-and (-webkit-min-device-pixel-ratio: 3)
-and (orientation: portrait) {
-	/*MP: Background*/
-	.tutorials {
-		/*1470px for iPhone 6+ Safari*/
-		min-height: 1715px;	
+* Big screen size
+******************/
+@media screen and (min-width: 300px) {
+    .tutorials {
+		position: fixed;
 	}
+}
 
-	.tutorialtitle {
-		font-size: 120px; 
-		left: 29%;
+/******************
+* Small screen size
+******************/
+@media screen and (max-width: 450px) {
+	.crab {
+		top:36%; 
+		left:16%;
 	}
 	
-	/*MP: Blowfish*/
-	.fish {
-		top: 60%;
+	.shrimp {
+		top:22%; 
+		left:33%;
+	}
+	
+	.mussel {
+		top:37%;
+		left:58%;
+	}
+	
+	.squid {
+		top:22%;
+		left:72%;
+	}
+	
+	.feedme {
+		top:50%;
+		left:53%;
+	}
+	
+	.order {
+		top:73%;
+		left:27%;
+	}
+	
+	.leftbutton {
+		top: 85%;
 		left: 15%;
 	}
 
-	.fish img {
-		width: 230px;
-		height: 210px;
+	.playGame {
+		top: 85%;
+		right: 15%;
 	}
-	
-	/*MP: Food display*/
-	.order {
-		top:68%;
-		left:44%;
-	}
-
-	.order img {
-		 width:480px;
-		 height:120px;
-	}
-	
-	/*MP: Feed me message*/
-	.feedme {
-		top:53%;
-		left:33%;
-	}
-
-	.feedme img {
-		 width:300px;
-		 height:150px;
-	}
-	
-	/*MP: Crab food*/
-	.crab {
-		position:absolute; 
-		top:42%; 
-		left:20%;
-	}
-
-	.crab img {
-		width:250px;
-		height:130px;
-	}
-
-	/*MP: Shrimp food*/
-	.shrimp {
-		position:absolute; 
-		top:28%; 
-		left:60%;
-	}
-
-	.shrimp img {
-		width:250px;
-		height:100px;
-	}
-
-	/*MP: Mussel*/
-	.mussel {
-		position:absolute;
-		top:43%;
-		left:60%;
-	}
-
-	.mussel img {
-		width:70px;
-		height:130px;
-	}
-
-	/*MP: Squid*/
-	.squid {
-		position:absolute;
-		top:25%;
-		left:20%;
-	}
-
-	.squid img {
-		width:180px;
-		height:130px;
-	}
-	
-	/*MP: Next button*/
-	.leftbutton {
-		position: absolute;
-		top: 80%;
-		left: 25%;
-	}
-
-	.leftbutton img {
-		width: 160px;
-		height: 160px;
-	}
-		
-
-}	
-
-/* iPhone 6+: Landscape */
-/* ML: Mobile Landscape */
-
-@media only screen
-and (min-device-width: 414px)
-and (max-device-width: 736px)
-and (-webkit-min-device-pixel-ratio: 3)
-and (orientation: landscape) {
-	.tutorials {
-		min-height: 490px;	
-	}
-	.tutorialtitle {
-		margin-top: 25px;
-	}
-	
-	/*ML: Shrimp food*/
-	.shrimp {
-
-		top:20%; 
-		left:40%;
-	}
-
-	.shrimp img {
-		width:60px;
-		height:60px;
-	}
-	
-	/*ML: Crab food*/
-	.crab {
-		position:absolute; 
-		top:32%; 
-		left:30%;
-	}
-
-	.crab img {
-		width:60px;
-		height:60px;
-	}
-	
-	/*ML: Squid food*/
-	.squid {
-		top:25%;
-		left:59%;
-	}
-
-	.squid img {
-		width:35px;
-		height:50px;
-	}
-	
-	/*ML: Mussel food*/
-	.mussel {
-		position:absolute;
-		top:37%;
-		left:50%;
-	}
-
-	.mussel img {
-		width:35px;
-		height:55px;
-	}
-	
-	/*ML: Blow fish*/
-	.fish {
-		top:55%; 
-		left:30%;
-	}
-
-	.fish img {
-		width:110px;
-		height:95px;
-	}	
-	
-	/*ML: Feed me*/
-	.feedme {
-		position:absolute;
-		top:50%;
-		left:42%;
-	}
-
-	.feedme img {
-		 width:150px;
-		 height:67px;
-	}
-	
-	/*ML: Food order display*/
-	.order {
-		position:absolute;
-		top:66%;
-		left:53%;
-	}
-
-	.order img {
-		 width:240px;
-		 height:50px;
-	}
-	
-	/*ML: Back screen button*/
-	.leftbutton {
-		top: 75%;
-		left: 38%;
-	}
-
-	.leftbutton img {
-		width: 60px;
-		height: 60px;
-	}
-	
 }
+
+/******************
+* For iPhone 4 and iphone 5
+******************/
+@media screen and (max-width: 320px) {
+	.order {
+		top:73%;
+		left:20%;
+	}
 	
+	.fish {
+		top: 55%;
+		left: 20%;
+		width: 30%;
+		height: 10%;
+	}
+	
+	.feedme {
+		left: 45%;
+		width: 43%;
+	}
+	
+	.order {
+		top: 75%;
+	}
+	
+	.order img {
+		height: 10%;
+		width: 80%;
+	}
+}
 
-
+/******************
+* For iPad
+******************/
+@media screen and (min-height: 1000px) {
+	.tutorials{
+		min-height: 1024px;
+	}
+}
 
 
 

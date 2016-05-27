@@ -7,7 +7,7 @@ var w = 330;   // the width of the easter egg
  */
 function clickEgg() {
   if(eggCounter == 5) {
-    serveSashimi();
+      serveSashimi();      
   } else {
       eggCounter += 1;
       changePic();
@@ -19,12 +19,12 @@ function clickEgg() {
  */
 function serveSashimi() {
     var blowfish = document.getElementById('myblowfish');
-    blowfish.src = "./img/Sashimi.png";
+    blowfish.src = "/img/Sashimi.png";
     $("#myblowfish").animate({
         //left: '250px',
         //opacity: '0.5',
-        height: '580px',
-        width: '620px'
+        height: '300px',
+        width: '330px'
     }, 2000);
 }
 
@@ -33,8 +33,8 @@ function serveSashimi() {
  */
 function changePic() {
     var blowfishh = document.getElementById('myblowfish');
-    //blowfish.src = "./img/Sashimi.png";
-    var img = "./img/" + parseInt(eggCounter) + ".gif";
+    //blowfish.src = "/img/Sashimi.png";
+    var img = "/img/" + parseInt(eggCounter) + ".gif";
     blowfishh.src = img;
     h += 15;
     w += 15;

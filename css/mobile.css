@@ -2,55 +2,63 @@
 * Background
 *************************************/
 .tutorials {
-	width: auto;
+	width: 100%;
 	min-height: 850px;
 	position: relative;
 	background: url(../img/fish.png) no-repeat;
 	background-size: cover;
+	left: 0;
 }
 
 /************************************
 * Title
 *************************************/
 .tutorialtitle {
-	position:absolute; 
-	top:0%; 
-	left:42%; 
+    margin-top: 20px;
+    text-align: center;
 	font-size: 44px; 
 	font-weight: bold; 
-	font-family: calibri; 
 	color: #FFFF00;
 	display: block;
 }
 
-/************************************
-* Blowfish Message
-*************************************/
-/*
-.hello {
-	position: absolute;
-	top: 23%;
-	left: 45%;
+
+/******************
+* sound button
+******************/
+#soundbtn {
+	/*background:url(../img/sound.png) no-repeat;*/
+    background-size: cover;
+	display:inline-block;
+    position:absolute;
+	margin-left:48%;
+	border:4px solid #ffffff;
+    border-top-left-radius:40px;
+	border-top-right-radius:40px;
+	border-bottom-left-radius:40px;
+    border-bottom-right-radius:40px;
+	right: 3%;
+	top: 2.8%;
+	cursor: pointer;
 }
 
-.hello img {
-	width: 95px;
-	height: 50px;
+#soundbtn img {
+    width:40px;
+	height:50px;
 }
-*/
 
 /************************************
 * Blowfish 
 *************************************/
 .fish {
 	position:absolute; 
-	top:19%; 
-	left:42%;
+	top:15%; 
+	left:43%;
 }
 
 .fish img {
-	width: 190px;
-	height: 180px;
+	width: 180px;
+	height: 160px;
 }
 
 /************************************
@@ -58,8 +66,8 @@
 *************************************/
 .order {
 	position: absolute;
-	top: 49%;
-	left: 40%;
+	top: 45%;
+	left: 41%;
 }
 
 .order img {
@@ -72,8 +80,8 @@
 *************************************/
 .arrow {
 	position: absolute;
-	top: 61%;
-	left: 40%;
+	top: 53%;
+	left: 41.5%;
 }
 
 .arrow img {
@@ -88,9 +96,9 @@
 	position:absolute; 
 	font-size: 18px; 
 	font-weight: bold; 
-	font-family: Calibri; 
-	top:63%; 
-	left:40%;" 
+	color: white;
+	top:58%; 
+	left:40%;
 }
 
 /************************************
@@ -98,8 +106,8 @@
 *************************************/
 .homebutton {
 	position: absolute;
-	top: 80%;
-	left: 38%;
+	top: 75%;
+	left: 35%;
 }
 
 .homebutton img {
@@ -112,8 +120,8 @@
 *************************************/
 .nextbutton {
 	position: absolute;
-	top: 80%;
-	left: 52%;
+	top: 75%;
+	right: 35%;
 }
 
 .nextbutton img {
@@ -121,176 +129,91 @@
 	height: 50px;
 }
 
-/***********************************
-* iPhone 6+ Screen
-* MP: Mobile Portrait
-***********************************/
-
-/* iPhone 6+: Portrait */
-@media only screen
-and (min-device-width: 414px)
-and (max-device-width: 736px)
-and (-webkit-min-device-pixel-ratio: 3)
-and (orientation: portrait) {
-	/*MP: Background*/
-	.tutorials {
-		/*1470px for iPhone 6+ Safari*/
-		min-height: 1715px;	
+/******************
+* Big screen size
+******************/
+@media screen and (min-width: 300px)  {
+    .tutorials{
+		position: fixed;
 	}
-
-	.tutorialtitle {
-		font-size: 120px; 
-		left: 29%;
-	}
-	
-	/*MP: Blowfish*/
-	.fish {
-		position:absolute; 
-		top:21%; 
-		left:35%;
-	}
-
-	.fish img {
-		width: 330px;
-		height: 310px;
-	}
-	
-	/*MP: Food order display*/
-	.order {
-		left: 14%;
-	}
-	
-	.order img {
-		width: 700px;
-		height: 120px;
-	}
-	
-	/*MP: Yellow arrow direction*/
-	.arrow  {
-		left: 14%;
-	}
-	
-	.arrow img {
-		width: 700px;
-		height: 40px;
-	}
-	
-	/*MP: Message*/
-	.message {
-		font-size: 40px; 
-		left:20%;" 
-	}
-	
-	/*MP: Home button*/
-	.homebutton {
-		top: 80%;
-		left: 25%;
-	}
-
-	.homebutton img {
-		width: 160px;
-		height: 160px;
-	}
-	
-	/*MP: Next button*/
-	.nextbutton {
-	position: absolute;
-		top: 80%;
-		left: 60%;
-	}
-
-	.nextbutton img {
-		width: 160px;
-		height: 160px;
-	}
-
 }
 
-/* iPhone 6+: Landscape */
-@media only screen
-and (min-device-width: 414px)
-and (max-device-width: 736px)
-and (-webkit-min-device-pixel-ratio: 3)
-and (orientation: landscape) {
-	.tutorials {
-		min-height: 490px;	
-	}
-	.tutorialtitle {
-		margin-top: 15px;
-	}
-	
-	/*MP: Blowfish*/
+/******************
+* Small screen size
+******************/
+@media screen and (max-width: 480px) {
 	.fish {
 		position:absolute; 
 		top:15%; 
-		left:40%;
-	}
-
-	.fish img {
-		width: 150px;
-		height: 130px;
-	}
-
-	/*MP: Blowfish Message*/
-	.hello {
-		position: absolute;
-		top: 15%;
-		left: 55%;
-	}
-
-	.hello img {
-		width: 95px;
-		height: 50px;
+		left:30%;
 	}
 	
-	/*MP: Food order display*/
 	.order {
-		top: 42%;
-		left: 40%;
-	}
-
-	.order img {
-		width: 240px;
-		height: 50px;
+	position: absolute;
+	top: 45%;
+	left: 21%;
 	}
 	
-	/*MP: Yellow direction arrow*/
 	.arrow {
-		top: 53%;
-	}
-
-	.arrow img {
-		width: 230px;
-		height: 20px;
+	position: absolute;
+	top: 53%;
+	left: 21.6%;
 	}
 	
-	/*MP: Message*/
 	.message {
-		top:55%; 	
+	font-size: 18px; 
+	font-weight: bold; 
+	color: white;
+	top:58%; 
+	left:20%;
+	
 	}
 	
-	
-	/*MP: Homebutton to screen*/
 	.homebutton {
-		position: absolute;
-		top: 75%;
-		left: 38%;
+	position: absolute;
+	top: 85%;
+	left: 15%;
 	}
 
-	.homebutton img {
-		width: 60px;
-		height: 60px;
-	}
-
-	/*MP: Next screen button*/
 	.nextbutton {
-		top: 75%;
-		left: 60%;
+	position: absolute;
+	top: 85%;
+	right: 15%;
 	}
+}
 
-	.nextbutton img {
-		width: 60px;
-		height: 60px;
+/******************
+* For iPhone 4 and iphone 5
+******************/
+@media screen and (max-width: 320px) {
+	.fish  img{
+		top: 30%;
+		height: 22%;
 	}
 	
+	.order {
+		top:47%;
+		left:21%;
+		width: 60%;
+	}
+	
+	.arrow {
+		top: 59%;
+		left: 15%;
+	}
+	
+	.message {
+		font-size: 15.5px;
+		top: 67%;
+		left: 15%;
+	}
+}
+
+/******************
+* For iPad
+******************/
+@media screen and (min-height: 1000px) {
+	.tutorials{
+		min-height: 1024px;
+	}
 }

@@ -32,6 +32,22 @@ and easy access to calling our javascript functions. The tutorial pages are
 simple html webpages which contain the instructions to play our game. The
 leaderboard pages have been put into a separate "templates" folder.
 
+The base structure of our game uses HTML. We have 5 separate HTML files;
+"index", "tutorial1", "tutorial2", "register", and "login".
+The index.html contains all of our game content with includes the objects that
+the users can see and interact with: timers, level counters, food display, and
+food items. Each of these items are held within their respective div boxes to
+allow of easy positioning and easy access to calling our JavaScript functions.
+The tutorial pages are simple html webpages which contain the instructions to
+play our game.
+
+For the styling of our game, we used Bootstrap to create a responsive web page.
+
+Our leaderboard, login, and registration have been created using ASP.net. Each
+file is placed inside of the main folder. Our database, created using SQL-Server,
+has been linked to our game using JavaScript
+
+
 Our game functionality has been coded using JavaScript and jQuery which is
 held in the js/ folder. Each aspect has been separated into their own .js files
 according to their functions: the easter egg functions is all contained in the egg.js etc.
@@ -39,7 +55,8 @@ according to their functions: the easter egg functions is all contained in the e
 As for our database, we have used SQL-Server and ASP.net to link our game to
 the database. Our main folder contains the ashx files that link our game to
 the database to write and retrieve data through the leaderboard page as well as
-the submission page.
+the submission page. We have linked our database using JavaScript in the database.js file.
+
 
 Technologies
 ----------------------

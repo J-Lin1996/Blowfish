@@ -8,6 +8,8 @@ var foodNumArray = new Array(4);  //this is for  level 1 - 15
 var foodNumArray2 = new Array(5)  //this is for level 16 - 30
 var foodNumArray3 = new Array(6); // this is for level 31 - ??
 
+var remainNumArray = new Array(12); // gnerate random number from 1 - 12
+
 
 /**
   this is for resetting the food num array.
@@ -19,9 +21,9 @@ function clearFoodNumArr() {
     foodNumArray[3] = 100;
 }
 
-/**
- * this is for resetting the food number array
- * @param numFood the number of food needed to be cleared
+/**	
+ * this is for resetting the food number array		
+ * @param numFood the number of food needed to be cleared		
  */
 function clearFoodNumArr2(numFood) {
     for (var i = 0; i < numFood; i++) {
@@ -29,9 +31,9 @@ function clearFoodNumArr2(numFood) {
     }
 }
 
-/**
- * this is for resetting the food number array
- * @param numFood the number of food needed to be cleared
+/**		
+ * this is for resetting the food number array		
+ * @param numFood the number of food needed to be cleared		
  */
 function clearFoodNumArr3(numFood) {
     for (var i = 0; i < numFood; i++) {
@@ -40,10 +42,14 @@ function clearFoodNumArr3(numFood) {
 }
 
 /**
- * This function is for controlling the food display in index page (4 food items)
- * @param foodOrderImgArr the array of images
- * @param level the level of this game
- */
+  clear the number of remaining food
+*/
+function clearRemain(num) {
+    for (var i = 0; i < num; i++) {
+        remainNumArray[i] = 100;          
+    }
+}
+
 function foodDisplay(foodOrderImgArr, level) {
     document.getElementById('foodDisplay0').src = foodOrderImgArr[0].src;
     document.getElementById('foodDisplay1').src = foodOrderImgArr[1].src;
@@ -51,26 +57,26 @@ function foodDisplay(foodOrderImgArr, level) {
     document.getElementById('foodDisplay3').src = foodOrderImgArr[3].src;
     document.getElementById('foodDisplay').style.display = "block";
     stopTimer();
-    document.getElementById("js_life").style.width = 500 + "px";
+    document.getElementById("js_life").style.width = 200 + "px";
 	
-
-    // if the level is less 10 the food display will fade away in 2 sec
-    // if the level is between 11 and 30 the food display will fade away in 1.5 sec
+	// if the level is less 10 the food display will fade away in 3 sec		
+    // if the level is between 11 and 30 the food display will fade away in 2 sec		
     // if the level is more than 30 the food display will fade away in 1 sec
     if (level <= 10) {
-        setTimeout(foodDisplayFade, 2000);
+        setTimeout(foodDisplayFade, 3000);
     } else if (level <= 30) {
-        setTimeout(foodDisplayFade, 1500);
+        setTimeout(foodDisplayFade, 2000);
     } else {
         setTimeout(foodDisplayFade, 1000);
     } 
 	
 }
 
-/**
- * This function is for controlling the food display in index page (5 food items)
- * @param foodOrderImgArr the array of images
- * @param level the level of this game
+			
+/**		
+ * This function is for controlling the food display in index page (5 food items)		
+ * @param foodOrderImgArr the array of images		
+ * @param level the level of this game		
  */
 function foodDisplay2(foodOrderImgArr, level) {
     document.getElementById('foodDisplay0').src = foodOrderImgArr[0].src;
@@ -80,21 +86,21 @@ function foodDisplay2(foodOrderImgArr, level) {
     document.getElementById('foodDisplay4').src = foodOrderImgArr[4].src;
     document.getElementById('foodDisplay').style.display = "block";
     stopTimer();
-    document.getElementById("js_life").style.width = 500 + "px";
+    document.getElementById("js_life").style.width = 200 + "px";
 
     if (level <= 10) {
-        setTimeout(foodDisplayFade, 2000);
+        setTimeout(foodDisplayFade, 3000);
     } else if (level <= 30) {
-        setTimeout(foodDisplayFade, 1500);
+        setTimeout(foodDisplayFade, 2000);
     } else {
         setTimeout(foodDisplayFade, 1000);
     }
 }
 
-/**
- * This function is for controlling the food display in index page (6 food items)
- * @param foodOrderImgArr the array of images
- * @param level the level of this game
+/**		
+ * This function is for controlling the food display in index page (6 food items)		
+ * @param foodOrderImgArr the array of images		
+ * @param level the level of this game		
  */
 function foodDisplay3(foodOrderImgArr, level) {
     document.getElementById('foodDisplay0').src = foodOrderImgArr[0].src;
@@ -105,21 +111,21 @@ function foodDisplay3(foodOrderImgArr, level) {
     document.getElementById('foodDisplay5').src = foodOrderImgArr[5].src;
     document.getElementById('foodDisplay').style.display = "block";
     stopTimer();
-    document.getElementById("js_life").style.width = 500 + "px";
+    document.getElementById("js_life").style.width = 200 + "px";
 
 
     if (level <= 10) {
-        setTimeout(foodDisplayFade, 2000);
+        setTimeout(foodDisplayFade, 3000);
     } else if (level <= 30) {
         setTimeout(foodDisplayFade, 2000);
     } else {
-        setTimeout(foodDisplayFade, 3000);
+        setTimeout(foodDisplayFade, 1000);
     }
 	
 }
 
-/**
- * fade away the food display
+/**		
+ * fade away the food display		
  */
 function foodDisplayFade() {
     document.getElementById('foodDisplay').style.display = "none";
@@ -127,11 +133,11 @@ function foodDisplayFade() {
     startEasyTimer();
 }
 
-/**
- * comparing the eating order clicked by user and the original eating order
- * @param userArr eating order clicked by user
- * @param correctArr the correct eating order
- * @returns {boolean} whether the two array is the same
+/**		
+ * comparing the eating order clicked by user and the original eating order		
+ * @param userArr eating order clicked by user		
+ * @param correctArr the correct eating order		
+ * @returns {boolean} whether the two array is the same		
  */
 function comparing(userArr, correctArr) {
     for (var i = 0; i < correctArr.length; i++) {
@@ -142,9 +148,8 @@ function comparing(userArr, correctArr) {
     return true;
 }
 
-
-/**
- * for blow fish animation
+/**		
+ * for blow fish animation		
  */
 function moveLeft() {
     var fishDiv = document.getElementById('fatfish');
@@ -152,7 +157,7 @@ function moveLeft() {
 }
 
 /**
-   this is the main function for generating numbers for 4 food items.
+   this is the main function for generating food.
 */
 function generateFoodNumArr() {
     clearFoodNumArr();
@@ -168,13 +173,16 @@ function generateFoodNumArr() {
         foodNumArray[count] = randx;
         count++;
     }
-
-
+    
+    /**show the foodnumarray for testing*/
+    //for (var i = 0; i < foodNumArray.length; i++) {
+    //    alert(foodNumArray[i]);
+    //}
     return foodNumArray;
 }
 
-/**
- this is the main function for generating numbers for 5 food items.
+/**		
+ this is the main function for generating numbers for 5 food items.		
  */
 function generateFoodNumArr2(numFood) {
     clearFoodNumArr2(numFood);
@@ -194,8 +202,8 @@ function generateFoodNumArr2(numFood) {
     return foodNumArray2;
 }
 
-/**
- this is the main function for generating numbers for 6 food items.
+/**		
+ this is the main function for generating numbers for 6 food items.		
  */
 function generateFoodNumArr3(numFood) {
     clearFoodNumArr3(numFood);
@@ -217,10 +225,33 @@ function generateFoodNumArr3(numFood) {
 }
 
 /**
- * checking the repeat number for 4 food items
- * @param num the number
- * @returns {boolean} whether the number is repeated in the array
- */
+  generate the food items trail number array
+*/
+function generateReamin(num) {
+    clearRemain(num);
+    var count = 0;
+    while (true) {
+        if (count == 12) {
+            break;
+        }
+        var randx = parseInt(Math.floor(Math.random() * 12)) + 1;  //generate number from 1 - 12
+        if (isRepeateNumRe(randx)) {
+            continue;
+        }
+        remainNumArray[count] = randx;
+        count++;
+    }
+
+
+    return remainNumArray;
+
+}
+
+/**
+ *checking the repeat number for 4 food items		
+ * @param num the number		
+ * @returns {boolean} whether the number is repeated in the array	
+*/
 function isRepeatedNum(num) {
     for (var i = 0; i < foodNumArray.length; i++) {
         if (num == foodNumArray[i]) {
@@ -230,10 +261,10 @@ function isRepeatedNum(num) {
     return false;
 }
 
-/**
- * checking the repeat number for 5 food items
- * @param num the number
- * @returns {boolean} whether the number is repeated in the array
+/**		
+ * checking the repeat number for 5 food items		
+ * @param num the number		
+ * @returns {boolean} whether the number is repeated in the array		
  */
 function isRepeatedNum2(num) {
     for (var i = 0; i < foodNumArray2.length; i++) {
@@ -244,10 +275,10 @@ function isRepeatedNum2(num) {
     return false;
 }
 
-/**
- * checking the repeat number for 6 food items
- * @param num the number
- * @returns {boolean} whether the number is repeated in the array
+/**		
+ * checking the repeat number for 6 food items		
+ * @param num the number		
+ * @returns {boolean} whether the number is repeated in the array		
  */
 function isRepeatedNum3(num) {
     for (var i = 0; i < foodNumArray3.length; i++) {
@@ -258,40 +289,54 @@ function isRepeatedNum3(num) {
     return false;
 }
 
-/**
- * add another food item
- * @param num the new number of the seafood
+/**		
+ * checking the repeat number for remaining food items		
+ * @param num the number		
+ * @returns {boolean} whether the number is repeated in the array		
  */
+function isRepeateNumRe(num) {
+    for (var i = 0; i < remainNumArray.length; i++) {
+        if (num == remainNumArray[i]) {
+            return true;
+        }
+    }
+    return false;
+}
+
+/**
+  add an new food item
+  @param num the number to be added to the food display
+*/
 function addFoodDisplay(num) {
     var imgDis = document.createElement('img');
-    imgDis.style.height = "125px";
-    imgDis.style.width = "125px";
+    imgDis.style.height = "50px";
+    imgDis.style.width = "50px";
     imgDis.style.float = "left";
     imgDis.id = "foodDisplay" + num;
     imgDis.src = "";
-    
+    //imgDis.style.border = "1px solid #dc00ff";
     if (num == 4) {
-        document.getElementById('foodDisplay').style.width = "650px";
-        document.getElementById('foodDisplay').style.left = "150px";
+        document.getElementById('foodDisplay').style.width = "273px";
+        document.getElementById('foodDisplay').style.left = "16%";
     } else {
-        document.getElementById('foodDisplay').style.width = "770px";
-        document.getElementById('foodDisplay').style.left = "100px";
+        document.getElementById('foodDisplay').style.width = "320px";
+        document.getElementById('foodDisplay').style.left = "10%";
     }
     
     document.getElementById('foodDisplay').appendChild(imgDis);
 }
 
-/**
- * using css to modify the original food display
+/**		
+ * using css to modify the original food display		
  */
 function backToOriFoodCss() {
-    document.getElementById('foodDisplay').style.width = "510px";
-    document.getElementById('foodDisplay').style.left = "240px";
+    document.getElementById('foodDisplay').style.width = "210px";
+    document.getElementById('foodDisplay').style.left = "26%";
 }
 
-/**
- * delete the 5th food item 
- * @param id the id of the food element 
+/**		
+ * delete the 5th food item 		
+ * @param id the id of the food element 		
  */
 function deleteFoodElem(id) {
     var idObject = document.getElementById(id);
@@ -301,9 +346,9 @@ function deleteFoodElem(id) {
     document.getElementById('food5').style.display = "none";
 }
 
-/**
- * delete the 6th food item
- * @param id the id of the food element
+/**		
+ * delete the 6th food item		
+ * @param id the id of the food element		
  */
 function deleteFoodElem2(id) {
     var idObject = document.getElementById(id);
@@ -312,3 +357,4 @@ function deleteFoodElem2(id) {
     }
     document.getElementById('food6').style.display = "none";
 }
+
